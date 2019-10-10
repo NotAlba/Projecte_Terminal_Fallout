@@ -1,8 +1,8 @@
 ----------------------------------INTEGRANTES---------------------------------
 
--Didac López-Goicochea Estébanez
--Alba Navarro Manzano
--Roger Carballo Rodríguez
+-Didac López-Goicochea Estébanez<br>
+-Alba Navarro Manzano<br>
+-Roger Carballo Rodríguez<br>
 
 ----------------------------------REQUISITOS----------------------------------
 
