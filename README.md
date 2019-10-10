@@ -1,9 +1,11 @@
 ----------------------------------INTEGRANTES---------------------------------
+
 -Didac López-Goicochea Estébanez
 -Alba Navarro Manzano
 -Roger Carballo Rodríguez
 
 ----------------------------------REQUISITOS----------------------------------
+
 Para poder arrancar dicha aplicacion se necesitan estos requisios:
 -Tener un servidor web(apache,tomcat)
 -Tener un interprete de php
