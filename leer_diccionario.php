@@ -12,6 +12,7 @@
 	foreach($palabras as $val)
 	{
 	echo ($val); 
+	echo "<br>";
 	}
 	
 
