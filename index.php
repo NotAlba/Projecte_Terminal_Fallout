@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript" src="js/jsWork.js"></script>
 </head>
 <body>
 	<?php

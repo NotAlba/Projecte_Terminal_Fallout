@@ -6,7 +6,7 @@ function validatePass(choosen_pass,correct_pass){
 					contador++;
 				}
 			}
-			console.log(contador);
+			console.log('Coinciden ' + contador + " palabras");
 	}else{
 		console.log("has acertado la palabra");
 	}
