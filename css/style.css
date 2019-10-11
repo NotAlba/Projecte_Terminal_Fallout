@@ -1,33 +1,67 @@
 body{
   background-color: #111;
 }
-
+#fondo{
+  height: 100%;
+  width: 100%;
+}
 #fondo img{
-  width: 1200px;
-  height: auto;
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 #pantalla{
   background: rgba(49,114,49,1);
   background: -moz-radial-gradient(center, ellipse cover, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
   background: -o-radial-gradient(center, ellipse cover, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
   background: radial-gradient(ellipse at center, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
-  position: absolute;
-  margin: -620px 250px;
-  width: 700px;
-  height: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -660px;
+  width: 750px;
+  height: 540px;
   border-radius: 70px;
-  z-index: 
   }
 
 #pantalla-texto{
   height: 88%;
-  width: 88%;
-  margin: 5%;
-  color: green;
-
+  width: 93.3%;
+  padding: 25px;
+  color: #67FF1D;
+  font-weight: bold;
 }
 
-#cabecera p:hover{
-  background-color: green;
-  color: white;
+hr{
+  border: 1px solid #67FF1D;
+}
+
+#juego{
+  width: 700px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.codigo{
+  width: 60px;
+  height: 400px;
+}
+
+.caracteres{
+  width: 200px;
+  height: 400px;
+}
+
+.mensaje{
+  width: 190px;
+  height: 60px;
+}
+
+.mensaje1{
+  margin-top: 320px;
+}
+.mensaje2{
+  margin-top: -140px;
 }
