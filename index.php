@@ -5,17 +5,12 @@
 </head>
 <body>
 	<?php
+		$ruta='./resources/diccionari_paraules.txt';
+		$arr_palabras = file($ruta);
 
-	$lectura = file_get_contents('diccionari_paraules.txt');
-
-	$palabras= str_split($lectura, 5);
-	foreach($palabras as $val)
-	{
-	echo ($val); 
-	echo "<br>";
-	}
-	
-
-?>
+		foreach ($arr_palabras as $linea){
+			echo $linea;
+		}
+	?>
 </body>
 </html>
