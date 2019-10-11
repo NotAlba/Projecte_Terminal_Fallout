@@ -7,19 +7,77 @@
   </head>
 
   <body>
+
     <div id="fondo">
-      <img src="../img/fondo_pantalla2.png" alt="fondo_pantalla">
+      <img src="../img/fondo_pantalla.png" alt="fondo_pantalla">
 
+      <!-- El div (pantalla) es el fondo que tiene el terminal simulando una pantalla real -->
       <div id="pantalla">
-        <div id="pantalla-texto">
-          <div id="cabecera">
-            <p>sfld</p>
-            <p>ljsdfn</p>
-          </div>
-          <div class="juego">
-            <div class="">
 
+        <!-- El div (pantalla-texto) es para encajar todo el texto que aparece en la pantalla del juego sin que se vea fuera de sitio -->
+        <div id="pantalla-texto">
+
+          <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
+          <div id="info_vidas">
+            <p>ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
+            <p>4 ATTEMPT(S) LEFT:  []  []  []  []</p>
+          </div>
+
+          <hr>
+          <!-- El div (juego) es para encajar todo los elementos jugables juntos -->
+          <div id="juego">
+            <!-- El div (codigo) es para poner el código fijo del juego -->
+            <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
+            <div class="codigo">
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
             </div>
+            <div class="caracteres">
+              <p>123456789012</p>
+              <p>123456789012</p>
+              <p>123456789012</p>
+              <p>123456789012</p>
+            </div>
+            <div class="codigo">
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+            </div>
+            <div class="caracteres">
+              <p>123456789012</p>
+              <p>123456789012</p>
+              <p>123456789012</p>
+              <p>123456789012</p>
+            </div>
+
+            <!-- El div (mensajes) es para los mensajes de ayuda al hacer pulsar una palabra -->
+            <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
+            <!-- La class (mensaje1/2) es para estructurar el posicionamiento de cada mensaje -->
+            <!-- El class (mens) es para dierenciar cada div-->
+            <div class="mensajes">
+              <div class="mensaje mensaje1 mens1">
+                <p>1</p>
+              </div>
+              <div class="mensaje mensaje2 mens2">
+                <p>2</p>
+              </div>
+              <div class="mensaje mensaje2 mens3">
+                <p>3</p>
+              </div>
+              <div class="mensaje mensaje2 mens4">
+                <p>4</p>
+              </div>
+              <div class="mensaje mensaje2 mens5">
+                <p>5</p>
+              </div>
+              <div class="mensaje mensaje2 mens6">
+                <p>6</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
