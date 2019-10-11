@@ -1,0 +1,33 @@
+body{
+  background-color: #111;
+}
+
+#fondo img{
+  width: 1200px;
+  height: auto;
+}
+#pantalla{
+  background: rgba(49,114,49,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(49,114,49,1) 0%, rgba(33,47,33,1) 58%, rgba(28,28,28,1) 74%, rgba(28,28,28,1) 100%);
+  position: absolute;
+  margin: -620px 250px;
+  width: 700px;
+  height: 500px;
+  border-radius: 70px;
+  z-index: 
+  }
+
+#pantalla-texto{
+  height: 88%;
+  width: 88%;
+  margin: 5%;
+  color: green;
+
+}
+
+#cabecera p:hover{
+  background-color: green;
+  color: white;
+}
