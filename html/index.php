@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <?php 
+      include '../php/Controller.php';
+      $array_palabras = obtenerPalabrasConSimbolitos();
+     ?>
     <meta charset="utf-8">
     <title>juego</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
@@ -9,7 +13,7 @@
   </head>
 
   <body>
-
+      <div><?php echo $array_palabras ?></div>
     <div id="fondo">
       <img src="../img/pantalla.png" alt="fondo_pantalla">
 
