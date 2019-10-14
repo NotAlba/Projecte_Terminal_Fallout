@@ -64,9 +64,10 @@
 				}
 				
 			}
-
+			$palabra=$arr_palabras_elegidas[$y];
+			
 			if ($no_es_simbolo==0) {
-				$string=substr_replace($string, $arr_palabras_elegidas[$y],$random_posicion,$size_palabra );
+				$string=substr_replace($string, "<span>".$palabra."</span>",$random_posicion,$size_palabra );
 				
 			}else{
 				
