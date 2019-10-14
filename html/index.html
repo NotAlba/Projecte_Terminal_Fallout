@@ -4,25 +4,22 @@
     <meta charset="utf-8">
     <title>juego</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/javascript" src="../js/jsWork2.js"></script>
   </head>
 
   <body>
 
     <div id="fondo">
-      <img src="../img/fondo_pantalla.png" alt="fondo_pantalla">
-
-      <!-- El div (pantalla) es el fondo que tiene el terminal simulando una pantalla real -->
-      <div id="pantalla">
+      <img src="../img/pantalla.png" alt="fondo_pantalla">
 
         <!-- El div (pantalla-texto) es para encajar todo el texto que aparece en la pantalla del juego sin que se vea fuera de sitio -->
         <div id="pantalla-texto">
 
           <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
           <div id="info_vidas">
-            <p>ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
-            <p>4 ATTEMPT(S) LEFT:  []  []  []  []</p>
+            <p id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
+            <p id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
           </div>
-
           <hr>
           <!-- El div (juego) es para encajar todo los elementos jugables juntos -->
           <div id="juego">
@@ -33,31 +30,64 @@
               <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
             </div>
             <div class="caracteres">
-              <p>123456789012</p>
-              <p>123456789012</p>
-              <p>123456789012</p>
-              <p>123456789012</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <span>1 2 3 4 5 6 7 8 9 0 1 2</span>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+
             </div>
             <div class="codigo">
               <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
             </div>
             <div class="caracteres">
-              <p>123456789012</p>
-              <p>123456789012</p>
-              <p>123456789012</p>
-              <p>123456789012</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 <span>4 5 6 7</span> 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
             </div>
 
             <!-- El div (mensajes) es para los mensajes de ayuda al hacer pulsar una palabra -->
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
             <!-- La class (mensaje1/2) es para estructurar el posicionamiento de cada mensaje -->
             <!-- El class (mens) es para dierenciar cada div-->
-            <div class="mensajes">
+            <div id="mensajes">
               <div class="mensaje mensaje1 mens1">
                 <p>1</p>
               </div>
@@ -73,16 +103,13 @@
               <div class="mensaje mensaje2 mens5">
                 <p>5</p>
               </div>
-              <div class="mensaje mensaje2 mens6">
-                <p>6</p>
-              </div>
             </div>
 
-          </div>
+          </div> <!-- div juego -->
+        </div> <!-- div pantalla-texto -->
+        <div class="resolucion-peque">
+          <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
         </div>
-
-      </div>
-
-    </div>
+    </div> <!-- div fondo -->
   </body>
 </html>
