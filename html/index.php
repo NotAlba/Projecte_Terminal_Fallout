@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>juego</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script type="text/javascript" src="../js/jsWork2.js"></script>
   </head>
 
@@ -21,11 +22,16 @@
             <p id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
           </div>
           <hr>
+
           <!-- El div (juego) es para encajar todo los elementos jugables juntos -->
           <div id="juego">
             <!-- El div (codigo) es para poner el código fijo del juego -->
             <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
             <div class="codigo">
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
@@ -52,9 +58,16 @@
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
-
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
             </div>
             <div class="codigo">
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
+              <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
               <p>0xE100</p>
@@ -73,6 +86,10 @@
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 <span>4 5 6 7</span> 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
+              <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
@@ -102,6 +119,9 @@
               </div>
               <div class="mensaje mensaje2 mens5">
                 <p>5</p>
+              </div>
+              <div class="mensaje mensaje2 mens5">
+                <p>6</p>
               </div>
             </div>
 
