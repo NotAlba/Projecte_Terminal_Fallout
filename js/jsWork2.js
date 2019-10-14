@@ -1,9 +1,9 @@
-//metodo implementado 
+//metodo implementado
 var intentosGlobal= 4;
 console.log("intentos:" , intentosGlobal)
 function validatePass(choosen_pass,correct_pass){
 	let contador = 0;
-	let vida = "[] ";
+	let vida = "<span>[]</span>&nbsp";
 	//parte del fallo de la palabra
 	if(this.intentosGlobal !=0){
 		if(choosen_pass != correct_pass){
@@ -15,7 +15,7 @@ function validatePass(choosen_pass,correct_pass){
 				}
 
 				console.log(contador , "/" , choosen_pass.length , " letras" );
-				
+
 				document.getElementById("intentos").innerHTML = this.intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(this.intentosGlobal);
 				console.log("intentos restantes: ", this.intentosGlobal)
 		}else{
