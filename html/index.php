@@ -32,22 +32,22 @@
             <!-- El div (codigo) es para poner el código fijo del juego -->
             <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
             <div class="codigo">
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
+              <p>0xE101</p>
+              <p>0xE102</p>
+              <p>0xE103</p>
+              <p>0xE104</p>
+              <p>0xE105</p>
+              <p>0xE106</p>
+              <p>0xE107</p>
+              <p>0xE108</p>
+              <p>0xE109</p>
+              <p>0xE110</p>
+              <p>0xE111</p>
+              <p>0xE112</p>
+              <p>0xE113</p>
+              <p>0xE114</p>
+              <p>0xE115</p>
+              <p>0xE116</p>
             </div>
             <div class="caracteres">
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
@@ -68,22 +68,22 @@
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>
             </div>
             <div class="codigo">
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
-              <p>0xE100</p>
+              <p>0xE117</p>
+              <p>0xE118</p>
+              <p>0xE119</p>
+              <p>0xE120</p>
+              <p>0xE121</p>
+              <p>0xE122</p>
+              <p>0xE123</p>
+              <p>0xE124</p>
+              <p>0xE125</p>
+              <p>0xE126</p>
+              <p>0xE127</p>
+              <p>0xE128</p>
+              <p>0xE129</p>
+              <p>0xE130</p>
+              <p>0xE131</p>
+              <p>0xE132</p>
             </div>
             <div class="caracteres">
               <p>1 2 3 4 5 6 7 8 9 0 1 2</p>

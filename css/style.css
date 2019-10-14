@@ -45,9 +45,8 @@ hr{
   height: 80%;
 }
 .caracteres{
-  width: 29%;
+  width: 31%;
   height: 80%;
-  font-weight: bold;
 }
 .codigo p, .caracteres p{
   margin: 9px 0;
@@ -61,7 +60,7 @@ hr{
 
 
 #mensajes{
-  width: 24%;
+  width: 20%;
   height: 80%;
 }
 
@@ -94,6 +93,10 @@ hr{
     margin-top: -615px;
     font-size: 14px;
   }
+  .codigo p, .caracteres p{
+    margin: 7px 0;
+  }
+
   .mensaje1{
     margin-top: 370px;
   }
