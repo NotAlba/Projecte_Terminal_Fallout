@@ -3,7 +3,7 @@
   <head>
     <?php 
       include '../php/Controller.php';
-      $array_palabras = obtenerPalabrasConSimbolitos();
+      $string_palabras = obtenerPalabrasConSimbolitos();
      ?>
     <meta charset="utf-8">
     <title>juego</title>
@@ -13,7 +13,7 @@
   </head>
 
   <body>
-      <div><?php echo $array_palabras ?></div>
+      <div><?php echo $string_palabras ?></div>
     <div id="fondo">
       <img src="../img/pantalla.png" alt="fondo_pantalla">
 

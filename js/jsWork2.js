@@ -1,6 +1,10 @@
 //metodo implementado
 var intentosGlobal= 4;
 console.log("intentos:" , intentosGlobal)
+function comprobar_palabra(id){
+	console.log(id);
+	console.log(document.getElementById(id).innerHTML)
+}
 function validatePass(choosen_pass,correct_pass){
 	let contador = 0;
 	let vida = "<span>[]</span>&nbsp";

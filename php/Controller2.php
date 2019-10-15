@@ -8,9 +8,8 @@
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
 		$palabras_elegidas = eleccionPalabras($array);
-		$lista_ID=creacionID($palabras_elegidas);
 		$simbolosString = creacionStringBase();
-		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID);
+		$stringFinal = stringFinal($palabras_elegidas, $simbolosString);
 		return $stringFinal;
 	}
 
@@ -43,24 +42,12 @@
 		
 	function creacionStringBase(){
 		$string = '';
-		for ($a=0; $a < CARACTERES_TOTALES ; $a++) { 
-			$caracter=array_rand(SIMBOLOS);
-			$string=$string.SIMBOLOS[$caracter];
-		}
+		
 		return $string;
 	}
 
-	function creacionID($arr_palabras_elegidas){
-		
-		$array_ID=[];
 
-		for ($a=0; $a <count($arr_palabras_elegidas) ; $a++) { 
-			$base='palabra'.$a;
-			$array_ID[]=$base;
-		}
-		return $array_ID;
-	}
-	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
+	function stringFinal($arr_palabras_elegidas,$string){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
 		for ($y=0; $y < $size_array_elegidas; $y++){
@@ -74,11 +61,11 @@
 				}
 				
 			}
-
 			$palabra=$arr_palabras_elegidas[$y];
 			
+
 			if ($no_es_simbolo==0) {
-				$string=substr_replace($string, "<span id=".$lista_ID[$y]." onClick='comprobar_palabra(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
+				$string=substr_replace($string, "<span>".$palabra."</span>",$random_posicion,$size_palabra );
 				
 			}else{
 				

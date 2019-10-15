@@ -2,6 +2,9 @@
 let intentosGlobal= 4;
 let palabraAcertada = 0;
 console.log("intentos:" , intentosGlobal);
+function comprobar_palabra(id){
+	console.log(id);
+}
 function validatePass(choosen_pass,correct_pass){
 	let contador = 0;
 	//parte del fallo de la palabra
