@@ -1,5 +1,6 @@
 body{
   background-color: #111;
+  color: #7CFC00;
 }
 #fondo{
   height: 100%;
@@ -17,39 +18,34 @@ body{
 
 #pantalla-texto{
   margin: 10px auto;
-  margin-top: -725px;
-  height: 580px;
-  width: 750px;
-  color: #7CFC00;
-  font-size: 16px;
+  margin-top: -710px;
+  height: 550px;;
+  width: 770px;
+  font-size: 22px;
   font-family: 'Share Tech Mono', monospace;
 }
 
-#info_vidas{
-  margin-left: 20px;
+#info_juego, #intentos{
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
-hr{
+#filete{
   border: 1px solid #67FF1D;
+  margin: 20px 0;
 }
 
 #juego{
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  margin-top: 30px;
   display: flex;
+  line-height: 25px;
 }
 
-.codigo{
-  width: 9%;
-  height: 80%;
-}
 .caracteres{
-  width: 31%;
+  width: 35%;
   height: 80%;
-}
-.codigo p, .caracteres p{
-  margin: 9px 0;
 }
 
 .caracteres span:hover{
@@ -58,10 +54,11 @@ hr{
   cursor: pointer;
 }
 
-
 #mensajes{
-  width: 20%;
+  width: 29%;
   height: 80%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .mensaje{
@@ -69,16 +66,10 @@ hr{
   height: 15%;
 }
 
-.mensaje1{
-  margin-top: 410px;
-}
-.mensaje2{
-  margin-top: -166px;
-}
-
 .resolucion-peque{
   visibility: hidden;
 }
+
 
 
 @media screen and (max-width:970px) {
