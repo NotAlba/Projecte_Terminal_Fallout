@@ -17,11 +17,6 @@
   </head>
 
   <body>
-    <div class="">
-      <?php
-        echo $array_palabras;
-      ?>
-    </div>
 
     <div id="fondo">
       <img src="../img/pantalla.png" alt="fondo_pantalla">
@@ -51,24 +46,6 @@
             <div class="caracteres">
               <?php
 
-                
-                //echo wordwrap($decode , 12 , "<br>" , TRUE);
-              ?>
-
-            </div>
-
-            <div class="codigo">
-              <?php
-                for ($i=0; $i < 16; $i++) {
-                  $num = rand(10,99);
-                  echo "Ex1$num&nbsp <br>";
-                }
-              ?>
-            </div>
-
-            <div class="caracteres">
-              <?php
-
               $array_ID=[];
               for ($a=0; $a <6 ; $a++) {
                 $base='pal'.$a;
@@ -76,11 +53,11 @@
               }
 
                 $listaSimbolos=devolverArrayEspeciales();
-                
+
                 $contador=0;
                 $contadorInterno=0;
                 $contadorID=0;
-               
+
                 foreach ($listaCaracter as $caracter ) {
 
                   if ($caracter!='+' && $caracter!='-'){
@@ -99,21 +76,33 @@
                         echo $caracter_modificado;
                         $contadorInterno+=1;
                       }
-                      
+
                     }else{
                       echo $caracter_modificado;
                     }
-                    
+
                     $contador+=1;
                   }
                   if ($contador%12==0) {
                     echo "</br>";
                   }
-                  
+
                 }
-                //echo wordwrap($decode , 12 , "<br>" , TRUE);
+
+              ?>
+
+            </div>
+
+            <div class="codigo">
+              <?php
+                for ($i=0; $i < 16; $i++) {
+                  $num = rand(10,99);
+                  echo "Ex1$num&nbsp <br>";
+                }
               ?>
             </div>
+
+
 
 
 

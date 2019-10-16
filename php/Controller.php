@@ -1,6 +1,6 @@
 <?php
 
-	define('CARACTERES_TOTALES','384');
+	define('CARACTERES_TOTALES','390');
 
 
 	define('SIMBOLOS',devolverArrayEspeciales());
@@ -48,7 +48,7 @@
 	function creacionStringBase(){
 		$string = '';
 		for ($a=0; $a < CARACTERES_TOTALES ; $a++) {
-			
+
 			//$caracter=htmlspecialchars(array_rand(SIMBOLOS),ENT_QUOTES);
 			$caracter=array_rand(SIMBOLOS);
 			$string=$string.SIMBOLOS[$caracter];
