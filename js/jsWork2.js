@@ -39,7 +39,27 @@ function comprobar_pal(id,palabraCorrecta){
 			document.getElementById("mensaje1").innerHTML = "Semejanza " + contador;
 			document.getElementById(id).innerHTML = adicionPuntos;
 			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
+		}else{
+			document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
+			document.getElementsByClassName("codigo")[0].innerText = "";
+			document.getElementsByClassName("codigo")[1].innerText = "";
+			document.getElementById("mensaje6").innerHTML = "";
+			document.getElementById("mensaje5").innerHTML = "";
+			document.getElementById("mensaje4").innerHTML = "";
+			document.getElementById("mensaje3").innerHTML = "";
+			document.getElementById("mensaje2").innerHTML = "";
+			document.getElementById("mensaje1").innerHTML = "";
 		}
+	}else{
+			document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
+			document.getElementsByClassName("codigo")[0].innerText = "";
+			document.getElementsByClassName("codigo")[1].innerText = "";
+			document.getElementById("mensaje6").innerHTML = "";
+			document.getElementById("mensaje5").innerHTML = "";
+			document.getElementById("mensaje4").innerHTML = "";
+			document.getElementById("mensaje3").innerHTML = "";
+			document.getElementById("mensaje2").innerHTML = "";
+			document.getElementById("mensaje1").innerHTML = "";
 	}
 
 
