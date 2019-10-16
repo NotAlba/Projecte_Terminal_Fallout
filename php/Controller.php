@@ -1,7 +1,7 @@
 <?php
 	define('CARACTERES_TOTALES','384');
 
-	$arr_especiales=['!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];
+	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '&' , '#' , '>', '{' , ']' , '[' , '}'];
 	define('SIMBOLOS',$arr_especiales);
 
 	function obtenerPalabrasConSimbolitos(){
@@ -16,7 +16,7 @@
 
 	function leerArchivo(){
 		$ruta='../resources/diccionari_paraules.txt';
-		return $arr_palabras = file($ruta);	
+		return $arr_palabras = file($ruta);
 	}
 
 	function eleccionPalabras($arr_palabras){
@@ -29,32 +29,32 @@
 			if (in_array($random_index, $arr_eleccion_palabra_indice)) {
 				while (in_array($random_index, $arr_eleccion_palabra_indice)) {
 					$random_index=rand(0,$size_array_palabras);
-					}	
+					}
 			}
-				
-			$arr_eleccion_palabra_indice[] = $random_index;	
+
+			$arr_eleccion_palabra_indice[] = $random_index;
 			$arr_palabras_elegidas[]= $arr_palabras[$random_index];
 			$i=$i+1;
 		}
 		return $arr_palabras_elegidas;
 	}
-		
-		
-		
+
+
+
 	function creacionStringBase(){
 		$string = '';
-		for ($a=0; $a < CARACTERES_TOTALES ; $a++) { 
-			$caracter=array_rand(SIMBOLOS);
+		for ($a=0; $a < CARACTERES_TOTALES ; $a++) {
+			$caracter=htmlspecialchars(array_rand(SIMBOLOS),ENT_QUOTES);
 			$string=$string.SIMBOLOS[$caracter];
 		}
 		return $string;
 	}
 
 	function creacionID($arr_palabras_elegidas){
-		
+
 		$array_ID=[];
 
-		for ($a=0; $a <count($arr_palabras_elegidas) ; $a++) { 
+		for ($a=0; $a <count($arr_palabras_elegidas) ; $a++) {
 			$base='palabra'.$a;
 			$array_ID[]=$base;
 		}
@@ -72,19 +72,20 @@
 				if (!in_array($caracter, SIMBOLOS)) {
 					$no_es_simbolo=$no_es_simbolo+1;
 				}
-				
+
 			}
 
 			$palabra=$arr_palabras_elegidas[$y];
-			
+
 			if ($no_es_simbolo==0) {
-				$string=substr_replace($string, "<span id=".$lista_ID[$y]." onClick='comprobar_palabra(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
-				
+				//$string=substr_replace($string, "<span id=".$lista_ID[$y]." onClick='comprobar_palabra(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
+				$string=substr_replace($string , $palabra , $random_posicion,$size_palabra );
+
 			}else{
-				
+
 				$y-=1;
 			}
 		}
 		return $string;
-	}	
+	}
 ?>

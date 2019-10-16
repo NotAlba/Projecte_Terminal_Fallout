@@ -43,11 +43,17 @@ body{
   line-height: 25px;
 }
 
-.caracteres{
-  width: 35%;
+.codigo{
+  width: 10%;
   height: 80%;
 }
-
+.caracteres{
+  width: 20%;
+  height: 80%;
+  margin-right: 4%;
+  word-wrap: break-word;
+  background-color: RED;
+}
 .caracteres span:hover{
   background-color: #67FF1D;
   color: #000;
@@ -79,13 +85,18 @@ body{
   }
 
   #pantalla-texto{
-    height: 580px;
+    height: 460px;
     width: 650px;
-    margin-top: -615px;
+    margin-top: -600px;
     font-size: 14px;
   }
-  .codigo p, .caracteres p{
-    margin: 7px 0;
+
+  #info_juego, #intentos{
+    font-size: 17px;
+  }
+
+  #juego{
+    line-height: 22px;
   }
 
   .mensaje1{
@@ -112,4 +123,22 @@ body{
     text-align: center;
     margin-top: -250px;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.aaa{
+  width: 50px;
+  height: 200px;
+  background-color: red;
+  word-wrap: break-word;
 }

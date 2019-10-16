@@ -10,11 +10,9 @@
 
     <?php
       include '../php/Controller.php';
-      $array_palabras = obtenerPalabrasConSimbolitos();
-      $listaCaracter = str_split($array_palabras);
-      $numTotalLista = count($listaCaracter);
-      $mitadLista = $numTotalLista/2;
-      $mitadLista1 = ($numTotalLista/2)+1;
+      $array_palabras = obtenerPalabrasConSimbolitos(); // esto es un string
+      $listaCaracter = str_split($array_palabras); // esto es una array
+      $decode = html_entity_decode($array_palabras);
      ?>
   </head>
 
@@ -22,10 +20,9 @@
     <div class="">
       <?php
         echo $array_palabras;
-        echo "<br>";
-        echo count($listaCaracter);
       ?>
     </div>
+
     <div id="fondo">
       <img src="../img/pantalla.png" alt="fondo_pantalla">
 
@@ -42,48 +39,40 @@
           <!-- El div (juego) es para encajar todo los elementos jugables juntos -->
           <div id="juego">
             <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
-            <div class="caracteres">
+            <div class="codigo">
               <?php
-                for ($i=1; $i <= $mitadLista; $i++) {
-                  $num = rand(10, 99);
-                  if ($i==1) {
-                    echo "0xE1$num $listaCaracter[0]";
-                    echo $listaCaracter[$i];
-                  }
-                  elseif ($i==$mitadLista) {
-                    echo "$listaCaracter[$i] <br>";
-                  }
-                  else if ($i%12==0) {
-                    echo "$listaCaracter[$i] <br>";
-                    echo "0xE1$num ";
-                  }
-                  else{
-                    echo $listaCaracter[$i];
-                  }
+                for ($i=0; $i < 16; $i++) {
+                  $num = rand(10,99);
+                  echo "Ex0$num&nbsp <br>";
                 }
               ?>
             </div>
 
             <div class="caracteres">
-              <p>
-                <?php
-                  for ($i=($mitadLista1); $i < $numTotalLista; $i++) {
-                    $num = rand(10, 99);
-                    if ($i==$mitadLista1) {
-                      echo "0xE1".$num." ".$listaCaracter[$mitadLista1];
-                    }
-                    
-                    else if ($i%12==0) {
-                      echo $listaCaracter[$i]."<br>";
-                      echo "0xE1".$num;
-                    }
-                    else{
-                      echo $listaCaracter[$i];
-                    }
-                  }
-                ?>
-              </p>
+              <?php
+                echo $array_palabras;
+                //echo wordwrap($decode , 12 , "<br>" , TRUE);
+              ?>
             </div>
+
+            <div class="codigo">
+              <?php
+                for ($i=0; $i < 16; $i++) {
+                  $num = rand(10,99);
+                  echo "Ex1$num&nbsp <br>";
+                }
+              ?>
+            </div>
+
+            <div class="caracteres">
+              <?php
+                //echo $decode;
+                echo wordwrap($decode , 12 , "<br>" , TRUE);
+              ?>
+            </div>
+
+
+
 
             <!-- El div (mensajes) es para los mensajes de ayuda al hacer pulsar una palabra -->
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
