@@ -1,7 +1,7 @@
 //metodo implementado
 var intentosGlobal= 4;
 console.log("intentos:" , intentosGlobal)
-function comprobar_palabra(id){
+function comprobar_pal(id){
 	console.log(id);
 	console.log(document.getElementById(id).innerText)
 }

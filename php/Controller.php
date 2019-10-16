@@ -1,9 +1,13 @@
 <?php
+
 	define('CARACTERES_TOTALES','384');
 
-	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '&' , '#' , '>', '{' , ']' , '[' , '}'];
-	define('SIMBOLOS',$arr_especiales);
 
+	define('SIMBOLOS',devolverArrayEspeciales());
+
+	function devolverArrayEspeciales(){
+		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
+	}
 	function obtenerPalabrasConSimbolitos(){
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
@@ -44,7 +48,9 @@
 	function creacionStringBase(){
 		$string = '';
 		for ($a=0; $a < CARACTERES_TOTALES ; $a++) {
-			$caracter=htmlspecialchars(array_rand(SIMBOLOS),ENT_QUOTES);
+			
+			//$caracter=htmlspecialchars(array_rand(SIMBOLOS),ENT_QUOTES);
+			$caracter=array_rand(SIMBOLOS);
 			$string=$string.SIMBOLOS[$caracter];
 		}
 		return $string;
@@ -55,11 +61,12 @@
 		$array_ID=[];
 
 		for ($a=0; $a <count($arr_palabras_elegidas) ; $a++) {
-			$base='palabra'.$a;
+			$base='pal'.$a;
 			$array_ID[]=$base;
 		}
 		return $array_ID;
 	}
+
 	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
@@ -78,14 +85,18 @@
 			$palabra=$arr_palabras_elegidas[$y];
 
 			if ($no_es_simbolo==0) {
-				//$string=substr_replace($string, "<span id=".$lista_ID[$y]." onClick='comprobar_palabra(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
-				$string=substr_replace($string , $palabra , $random_posicion,$size_palabra );
+				//$string=substr_replace($string, "<span id='".$lista_ID[$y]."' onClick='comprobar_pal(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
+				$string=substr_replace($string , $palabra, $random_posicion,$size_palabra );
+
 
 			}else{
 
 				$y-=1;
 			}
 		}
+		$string=preg_replace('/\s+/','',$string);
+		$string = preg_replace("/(spanid)/", "span id", $string);
+		$string = preg_replace("/(on)/", " on", $string);
 		return $string;
 	}
 ?>

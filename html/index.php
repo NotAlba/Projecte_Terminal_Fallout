@@ -50,9 +50,11 @@
 
             <div class="caracteres">
               <?php
-                echo $array_palabras;
+
+                
                 //echo wordwrap($decode , 12 , "<br>" , TRUE);
               ?>
+
             </div>
 
             <div class="codigo">
@@ -66,8 +68,50 @@
 
             <div class="caracteres">
               <?php
-                //echo $decode;
-                echo wordwrap($decode , 12 , "<br>" , TRUE);
+
+              $array_ID=[];
+              for ($a=0; $a <6 ; $a++) {
+                $base='pal'.$a;
+                $array_ID[]=$base;
+              }
+
+                $listaSimbolos=devolverArrayEspeciales();
+                
+                $contador=0;
+                $contadorInterno=0;
+                $contadorID=0;
+               
+                foreach ($listaCaracter as $caracter ) {
+
+                  if ($caracter!='+' && $caracter!='-'){
+                    $caracter_modificado=html_entity_decode($caracter);
+                    if (!in_array($caracter_modificado, $listaSimbolos)) {
+                      if ($contadorInterno==0) {
+                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this.id)'>".$caracter_modificado;
+                        $contadorInterno+=1;
+                      }
+                      elseif ($contadorInterno==4) {
+                        echo $caracter_modificado."</span>";
+                        $contadorInterno=0;
+                        $contadorID+=1;
+
+                      }else{
+                        echo $caracter_modificado;
+                        $contadorInterno+=1;
+                      }
+                      
+                    }else{
+                      echo $caracter_modificado;
+                    }
+                    
+                    $contador+=1;
+                  }
+                  if ($contador%12==0) {
+                    echo "</br>";
+                  }
+                  
+                }
+                //echo wordwrap($decode , 12 , "<br>" , TRUE);
               ?>
             </div>
 
