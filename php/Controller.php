@@ -1,6 +1,6 @@
 <?php
 
-	define('CARACTERES_TOTALES','390');
+	define('CARACTERES_TOTALES','396');
 
 
 	define('SIMBOLOS',devolverArrayEspeciales());
@@ -98,5 +98,9 @@
 		$string = preg_replace("/(spanid)/", "span id", $string);
 		$string = preg_replace("/(on)/", " on", $string);
 		return $string;
+	}
+
+	function getPalabraCorrecta(){
+
 	}
 ?>

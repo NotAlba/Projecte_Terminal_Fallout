@@ -1,13 +1,53 @@
 //metodo implementado
-var intentosGlobal= 4;
+let intentosGlobal= 4;
 console.log("intentos:" , intentosGlobal)
-function comprobar_pal(id){
-	console.log(id);
-	console.log(document.getElementById(id).innerText)
-}
-function validatePass(choosen_pass,correct_pass){
-	let contador = 0;
+function comprobar_pal(id,palabraCorrecta){
+	adicionPuntos = ".....";
 	let vida = "<span>[]</span>&nbsp";
+	let contador = 0;
+	let palabraSeleccionada = palabra = document.getElementById(id).innerHTML;
+	let correct = palabraCorrecta.innerHTML;
+	correct = correct.replace("<br>","");
+	posicionBr = palabraSeleccionada.indexOf("<br>");
+	palabraSeleccionada = palabra.replace("<br>","");
+
+	if(intentosGlobal != 0){
+		if(palabraSeleccionada!= correct){
+			intentosGlobal--;
+			for (let i = 0; i < palabraSeleccionada.length; i++) {
+				if(palabraSeleccionada[i] == correct[i]){
+					contador++;
+				}
+			}
+
+			if(posicionBr == 1){
+				adicionPuntos = ".<br>...."
+			}else if (posicionBr == 2) {
+				adicionPuntos = "..<br>..."
+			}
+			else if (posicionBr == 3) {
+				adicionPuntos = "...<br>.."
+			}
+			else if (posicionBr == 4) {
+				adicionPuntos = "....<br>."
+			}
+			document.getElementById("mensaje6").innerHTML = document.getElementById("mensaje5").innerHTML;
+			document.getElementById("mensaje5").innerHTML = document.getElementById("mensaje4").innerHTML;
+			document.getElementById("mensaje4").innerHTML = document.getElementById("mensaje3").innerHTML;
+			document.getElementById("mensaje3").innerHTML = document.getElementById("mensaje2").innerHTML;
+			document.getElementById("mensaje2").innerHTML = document.getElementById("mensaje1").innerHTML;
+			document.getElementById("mensaje1").innerHTML = "Semejanza " + contador;
+			document.getElementById(id).innerHTML = adicionPuntos;
+			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
+		}
+	}
+
+
+
+}
+	
+function validatePass(choosen_pass,correct_pass){
+
 	//parte del fallo de la palabra
 	if(this.intentosGlobal !=0){
 		if(choosen_pass != correct_pass){
@@ -18,8 +58,6 @@ function validatePass(choosen_pass,correct_pass){
 							contador++;
 						}
 					}
-
-					console.log(contador , "/" , choosen_pass.length , " letras" );
 
 					document.getElementById("intentos").innerHTML = this.intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(this.intentosGlobal);
 					console.log("intentos restantes: ", this.intentosGlobal);

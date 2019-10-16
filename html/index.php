@@ -51,7 +51,7 @@
                 $base='pal'.$a;
                 $array_ID[]=$base;
               }
-
+                $palabraCorrecta = $array_ID[rand(0,5)];
                 $listaSimbolos=devolverArrayEspeciales();
 
                 $contador=0;
@@ -64,7 +64,7 @@
                     $caracter_modificado=html_entity_decode($caracter);
                     if (!in_array($caracter_modificado, $listaSimbolos)) {
                       if ($contadorInterno==0) {
-                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this.id)'>".$caracter_modificado;
+                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this.id,".$palabraCorrecta.")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
                       elseif ($contadorInterno==4) {
@@ -111,22 +111,22 @@
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
             <div id="mensajes">
               <div class="mensaje">
-                <p>1</p>
+                <p id="mensaje1"></p>
               </div>
               <div class="mensaje">
-                <p>2</p>
+                <p id="mensaje2"></p>
               </div>
               <div class="mensaje">
-                <p>3</p>
+                <p id="mensaje3"></p>
               </div>
               <div class="mensaje">
-                <p>4</p>
+                <p id="mensaje4"></p>
               </div>
               <div class="mensaje">
-                <p>5</p>
+                <p id="mensaje5"></p>
               </div>
               <div class="mensaje">
-                <p>6</p>
+                <p id="mensaje6"></p>
               </div>
             </div>
 
