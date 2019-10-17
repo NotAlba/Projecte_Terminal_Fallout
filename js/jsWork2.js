@@ -71,31 +71,3 @@ function comprobar_pal(id,palabraCorrecta){
 			document.getElementById("mensaje1").innerHTML = "";
 		}
 	}
-
-	
-function validatePass(choosen_pass,correct_pass){
-
-	//parte del fallo de la palabra
-	if(this.intentosGlobal !=0){
-		if(choosen_pass != correct_pass){
-				this.intentosGlobal--;
-				if(this.intentosGlobal!=0){
-					for (let i = 0; i < choosen_pass.length; i++) {
-						if(choosen_pass[i] == correct_pass[i]){
-							contador++;
-						}
-					}
-
-					document.getElementById("intentos").innerHTML = this.intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(this.intentosGlobal);
-					console.log("intentos restantes: ", this.intentosGlobal);
-				}else{
-					document.getElementById("intentos").innerHTML = "YA NO TE QUEDAN INTENTOS AMIGO";
-					console.log("ya no te quedan intentos amigo");
-				}
-		}else{
-			//parte de acierto de contraseña, aqui iria el fin del juego
-			document.getElementById("intentos").innerHTML = "HAS ACERTADO LA PALABRA!! ";
-			console.log("has acertado la palabra");
-		}
-	}
-}
