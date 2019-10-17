@@ -1,6 +1,6 @@
 <?php
 
-	define('CARACTERES_TOTALES','396');
+	define('CARACTERES_TOTALES','390');
 
 
 	define('SIMBOLOS',devolverArrayEspeciales());
