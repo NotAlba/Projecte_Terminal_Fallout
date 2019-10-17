@@ -64,7 +64,7 @@
                     $caracter_modificado=html_entity_decode($caracter);
                     if (!in_array($caracter_modificado, $listaSimbolos)) {
                       if ($contadorInterno==0) {
-                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this.id,".$palabraCorrecta.")'>".$caracter_modificado;
+                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
                       elseif ($contadorInterno==4) {

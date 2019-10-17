@@ -2,10 +2,11 @@
 let intentosGlobal= 4;
 console.log("intentos:" , intentosGlobal)
 function comprobar_pal(id,palabraCorrecta){
+	id.classList.add("disabled");
 	adicionPuntos = ".....";
 	let vida = "<span>[]</span>&nbsp";
 	let contador = 0;
-	let palabraSeleccionada = palabra = document.getElementById(id).innerHTML;
+	let palabraSeleccionada = palabra = id.innerHTML;
 	let correct = palabraCorrecta.innerHTML;
 	correct = correct.replace("<br>","");
 	posicionBr = palabraSeleccionada.indexOf("<br>");
@@ -39,7 +40,8 @@ function comprobar_pal(id,palabraCorrecta){
 				document.getElementById("mensaje3").innerHTML = document.getElementById("mensaje2").innerHTML;
 				document.getElementById("mensaje2").innerHTML = document.getElementById("mensaje1").innerHTML;
 				document.getElementById("mensaje1").innerHTML = "Semejanza " + contador;
-				document.getElementById(id).innerHTML = adicionPuntos;
+				id.innerHTML = adicionPuntos;
+				id.style.pointerEvents = "none"
 				document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
 			}else{
 				document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";

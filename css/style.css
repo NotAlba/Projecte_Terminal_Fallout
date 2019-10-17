@@ -7,6 +7,12 @@ body{
   height: 100%;
   width: 100%;
 }
+
+.disabled, .disabled:hover, .disabled:focus{
+  background: transparent!important;
+  color: #7CFC00!important;
+  cursor: inherit!important;
+}
 #fondo img{
   width: auto;
   height: 790px;
