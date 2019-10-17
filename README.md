@@ -7,7 +7,7 @@
 ----------------------------------REQUISITOS----------------------------------
 
 Para poder arrancar dicha aplicacion se necesitan estos requisitos:<br>
--Tener un servidor web(apache,tomcat etc)<br>
+-Tener un servidor web(apache,tomcat etc) y tenerlo arrancado<br>
 -Tener un interprete de php<br>
 
 Una vez se hayan cumplido dichos requisitos sera necesario clonar el proyecto
