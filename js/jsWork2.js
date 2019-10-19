@@ -12,62 +12,76 @@ function comprobar_pal(id,palabraCorrecta){
 	posicionBr = palabraSeleccionada.indexOf("<br>");
 	palabraSeleccionada = palabra.replace("<br>","");
 
-
-		if(palabraSeleccionada!= correct){
-			intentosGlobal--;
-			if(intentosGlobal!=0){
-				for (let i = 0; i < palabraSeleccionada.length; i++) {
-					if(palabraSeleccionada[i] == correct[i]){
-						contador++;
-					}
+	if(palabraSeleccionada!= correct){
+		intentosGlobal--;
+		if(intentosGlobal!=0){
+			for (let i = 0; i < palabraSeleccionada.length; i++) {
+				if(palabraSeleccionada[i] == correct[i]){
+					contador++;
 				}
-
-				if(posicionBr == 1){
-					adicionPuntos = ".<br>...."
-				}else if (posicionBr == 2) {
-					adicionPuntos = "..<br>..."
-				}
-				else if (posicionBr == 3) {
-					adicionPuntos = "...<br>.."
-				}
-				else if (posicionBr == 4) {
-					adicionPuntos = "....<br>."
-				}
-
-				document.getElementById("mensaje6").innerHTML = document.getElementById("mensaje5").innerHTML;
-				document.getElementById("mensaje5").innerHTML = document.getElementById("mensaje4").innerHTML;
-				document.getElementById("mensaje4").innerHTML = document.getElementById("mensaje3").innerHTML;
-				document.getElementById("mensaje3").innerHTML = document.getElementById("mensaje2").innerHTML;
-				document.getElementById("mensaje2").innerHTML = document.getElementById("mensaje1").innerHTML;
-				document.getElementById("mensaje1").innerHTML = "Semejanza " + contador;
-				id.innerHTML = adicionPuntos;
-				id.style.pointerEvents = "none"
-				document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
-			}else{
-				document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
-				document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
-				document.getElementsByClassName("codigo")[0].innerText = "";
-				document.getElementsByClassName("codigo")[1].innerText = "";
-				document.getElementById("mensaje6").innerHTML = "";
-				document.getElementById("mensaje5").innerHTML = "";
-				document.getElementById("mensaje4").innerHTML = "";
-				document.getElementById("mensaje3").innerHTML = "";
-				document.getElementById("mensaje2").innerHTML = "";
-				document.getElementById("mensaje1").innerHTML = "";
 			}
-		}
+			if(posicionBr == 1){
+				adicionPuntos = ".<br>...."
+			}else if (posicionBr == 2) {
+				adicionPuntos = "..<br>..."
+			}
+			else if (posicionBr == 3) {
+				adicionPuntos = "...<br>.."
+			}
+			else if (posicionBr == 4) {
+				adicionPuntos = "....<br>."
+			}
 
-
-		else{
-			document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
-			document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
-			document.getElementsByClassName("codigo")[0].innerText = "";
-			document.getElementsByClassName("codigo")[1].innerText = "";
-			document.getElementById("mensaje6").innerHTML = "";
-			document.getElementById("mensaje5").innerHTML = "";
-			document.getElementById("mensaje4").innerHTML = "";
-			document.getElementById("mensaje3").innerHTML = "";
-			document.getElementById("mensaje2").innerHTML = "";
-			document.getElementById("mensaje1").innerHTML = "";
+			__rellenarMensajes(contador);
+			id.innerHTML = adicionPuntos;
+			id.style.pointerEvents = "none"
+			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
+		}else{
+			__juegoPerdido()
 		}
 	}
+
+
+	else{
+		__juegoGanado();
+	}
+}
+
+function __rellenarMensajes(contador){
+	let mensajesFallo = document.getElementsByClassName("mensajeFallo");
+	for (let i = mensajesFallo.length-1; i>=0;i--) {
+		if(i==0){
+			mensajesFallo[i].innerHTML = "Semejanza " + contador;
+		}else{
+			mensajesFallo[i].innerHTML = mensajesFallo[i-1].innerHTML
+		}
+	}
+}
+
+function __juegoPerdido(){
+	document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
+	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
+	document.getElementsByClassName("codigo")[0].innerText = "";
+	document.getElementsByClassName("codigo")[1].innerText = "";
+
+	for (let i = 0; i<mensajesFallo.length;i++) {
+
+		mensajesFallo[i].innerHTML = "";
+	}
+
+
+
+}
+
+function __juegoGanado(){
+	let mensajesFallo = document.getElementsByClassName("mensajeFallo");
+	document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
+	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
+	document.getElementsByClassName("codigo")[0].innerText = "";
+	document.getElementsByClassName("codigo")[1].innerText = "";
+
+	for (let i = 0; i<mensajesFallo.length;i++) {
+
+		mensajesFallo[i].innerHTML = "";
+	}
+}

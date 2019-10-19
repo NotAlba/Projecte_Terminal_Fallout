@@ -111,22 +111,22 @@
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
             <div id="mensajes">
               <div class="mensaje">
-                <p id="mensaje1"></p>
+                <p class="mensajeFallo"></p>
               </div>
               <div class="mensaje">
-                <p id="mensaje2"></p>
+                <p class="mensajeFallo"></p>
               </div>
               <div class="mensaje">
-                <p id="mensaje3"></p>
+                <p class="mensajeFallo"></p>
               </div>
               <div class="mensaje">
-                <p id="mensaje4"></p>
+                <p class="mensajeFallo"></p>
               </div>
               <div class="mensaje">
-                <p id="mensaje5"></p>
+                <p iclass="mensajeFallo"></p>
               </div>
               <div class="mensaje">
-                <p id="mensaje6"></p>
+                <p class="mensajeFallo"></p>
               </div>
             </div>
 
