@@ -16,7 +16,7 @@
      ?>
   </head>
 
-  <body>
+  <body onload="cronoInicio()">
 
     <div id="fondo">
       <img src="../img/pantalla.png" alt="fondo_pantalla">
@@ -27,7 +27,10 @@
           <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
           <div id="info_vidas">
             <p id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
-            <p id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
+            <div id="vidas_crono">
+              <p id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
+              <p id="tiempoCrono"> <span id="minutos">0</span>:<span id="segundos">00</span> </p>
+            </div>
             <hr id="filete">
           </div>
 

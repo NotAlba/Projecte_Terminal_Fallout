@@ -60,7 +60,7 @@ function __rellenarMensajes(contador){
 
 function __juegoPerdido(){
 	document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
-	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
+	//document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
 
@@ -76,7 +76,7 @@ function __juegoPerdido(){
 function __juegoGanado(){
 	let mensajesFallo = document.getElementsByClassName("mensajeFallo");
 	document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
-	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
+	//document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
 
@@ -85,3 +85,36 @@ function __juegoGanado(){
 		mensajesFallo[i].innerHTML = "";
 	}
 }
+
+
+// Parte del cronometro
+
+let cronometro;
+let seg = 00;
+let min = 00;
+
+function crono() {
+	if (seg < 10) {
+		seg = "0" + seg;
+	}
+	if (seg == 60) {
+		seg = 00;
+		min++;
+		document.getElementById("minutos").innerHTML = min;
+	}
+	document.getElementById("segundos").innerHTML = seg;
+	seg++;
+}
+
+function cronoInicio() {
+	cronometro = setInterval(crono,1000);
+};
+
+function cronoFin() {
+	if (intentosGlobal==0) {
+		document.getElementById("intentos").innerHTML = "AAAA";
+		clearInterval(cronometro);
+	}
+};
+
+// Fin cronometro

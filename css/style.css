@@ -31,10 +31,26 @@ body{
   font-size: 22px;
 }
 
+#info_juego{
+  height: auto;
+  width: 100%;
+}
 #info_juego, #intentos{
   margin-left: 30px;
   margin-bottom: 10px;
   font-size: 20px;
+}
+#intentos{
+  width: 50%;
+}
+#vidas_crono{
+  display: flex;
+}
+#tiempoCrono{
+  width: 40%;
+  height: auto;
+  text-align: right;
+
 }
 #filete{
   border: 1px solid #67FF1D;
@@ -97,7 +113,7 @@ body{
     font-size: 14px;
   }
 
-  #info_juego, #intentos{
+  #info_juego, #intentos, #tiempoCrono{
     font-size: 17px;
   }
 
