@@ -38,15 +38,25 @@ function comprobar_pal(id,palabraCorrecta){
 			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
 		}else{
 			__juegoPerdido();
+<<<<<<< HEAD
 			
 		}	
+=======
+			cronoFin();
+		}
+>>>>>>> 398e93cadb716805d7b6a96a95f535a132e7c082
 	}
 
 
 	else{
 		__juegoGanado();
+<<<<<<< HEAD
 		document.getElementById("vaultboywin").className += " finjuegoimagen";
 
+=======
+		__cronoFin();
+		__mensajePromptFinJuego();
+>>>>>>> 398e93cadb716805d7b6a96a95f535a132e7c082
 	}
 }
 
@@ -63,7 +73,7 @@ function __rellenarMensajes(contador){
 
 function __juegoPerdido(){
 	document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
-	//document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
+	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
 	document.getElementById("vaultboyloss").className += " finjuegoimagen";
@@ -72,15 +82,12 @@ function __juegoPerdido(){
 
 		mensajesFallo[i].innerHTML = "";
 	}
-
-
-
 }
 
 function __juegoGanado(){
 	let mensajesFallo = document.getElementsByClassName("mensajeFallo");
 	document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
-	//document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
+	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
 
@@ -114,11 +121,34 @@ function cronoInicio() {
 	cronometro = setInterval(crono,1000);
 };
 
-function cronoFin() {
-	if (intentosGlobal==0) {
-		document.getElementById("intentos").innerHTML = "AAAA";
-		clearInterval(cronometro);
-	}
+function __cronoFin() {
+	clearInterval(cronometro);
 };
-
 // Fin cronometro
+
+
+
+function __mensajePromptFinJuego() {
+	let nombreJugador = prompt("Escribe tu nombre");
+	if (seg < 10) {
+		seg = "0" + (seg-1);
+	}
+	document.getElementById("intentos").innerHTML = nombreJugador +" - "+ min+":"+seg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
