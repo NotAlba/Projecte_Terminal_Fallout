@@ -48,10 +48,10 @@
             </div>
             <div class='buentrabajo' >
               <div id='vaultboywin'>
-                <img src="https://media.giphy.com/media/SHT4S1lOyAbaa6UvQZ/giphy.gif">
+                <img src="https://media.giphy.com/media/SHT4S1lOyAbaa6UvQZ/giphy.gif" >
               </div>  
               <div id='vaultboyloss'>
-                <img src="https://media.giphy.com/media/IbUkU9LrDgx9uEctjD/giphy.gif">
+                <img src="https://media.giphy.com/media/IbUkU9LrDgx9uEctjD/giphy.gif" alt="AnimacionPERDIDO">
               </div>  
 
             </div>
