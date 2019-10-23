@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -48,3 +49,9 @@
     </div> <!-- div fondo -->
   </body>
 </html>
+
+<?php 
+	$data = file_get_contents("resources/dataPlayers.json");
+
+	echo $data;
+ ?>
