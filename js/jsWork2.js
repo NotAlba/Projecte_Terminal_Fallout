@@ -53,8 +53,9 @@ function comprobar_pal(id,palabraCorrecta){
 	else{
 		__juegoGanado();
 		__cronoFin();
-		__mensajePromptFinJuego();
 		document.getElementById("vaultboywin").className += " finjuegoimagen";
+		setTimeout("__mensajePromptFinJuego()",50);
+		
 	}
 }
 
