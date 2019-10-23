@@ -50,27 +50,14 @@ function comprobar_pal(id,palabraCorrecta){
 		}
 	}
 
-
-
-			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
-		}else{
-			__juegoPerdido();
-			__cronoFin();
-		}
-	}
-
 	else{
 		__juegoGanado();
 		__cronoFin();
 		__mensajePromptFinJuego();
-
-	}
-}
-
-
 		document.getElementById("vaultboywin").className += " finjuegoimagen";
 	}
 }
+
 
 function ayuda(pal,palabraCorrecta,simbolos) {
 	let numRandomAyuda = Math.floor(Math.random() * 2);
@@ -194,28 +181,9 @@ function __mensajePromptFinJuego() {
 
 	document.getElementById("intentos").innerHTML = nombreJugador +" - Tiempo: "+ min+":"+seg +" - Vidas: "+ intentosGlobal;
 	document.getElementById("tiempoCrono").innerHTML = "";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 43ec5db7e758093df09658227640be718a8f64d2
-
 	if(min<10){
 		min = "0" + (min);
 	}
-
-
 	document.getElementById("intentos").innerHTML = nombreJugador +" - "+ min+":"+seg;
 
 	document.getElementById("player").value = nombreJugador

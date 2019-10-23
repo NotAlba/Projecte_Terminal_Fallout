@@ -149,9 +149,7 @@
         </div>
     </div> <!-- div fondo -->
 
-
     <form method="post" id="dataRanking" action="../php/WriteData.php" hidden>
-      
       <input type="text" id="player" name="nombre">
       <input type="text" id="time" name="tiempo">
       <input type="text" id="try" name="intentos">

@@ -1,9 +1,27 @@
-{
-    "nombre": "David",
-    "fallos": "1",
-    "tiempo": "00:01"
-},{
-    "nombre": "Carlos",
-    "fallos": "1",
-    "tiempo": "00:00"
-}
+[
+    {
+        "nombre": "Alba",
+        "fallos": "0",
+        "tiempo": "00:00"
+    },
+    {
+        "nombre": "Alexis",
+        "fallos": "3",
+        "tiempo": "00:12"
+    },
+    {
+        "nombre": "Paco",
+        "fallos": "2",
+        "tiempo": "00:25"
+    },
+    {
+        "nombre": "Paco",
+        "fallos": "2",
+        "tiempo": "00:25"
+    },
+    {
+        "nombre": "PACO PUTO AMO",
+        "fallos": "1",
+        "tiempo": "00:02"
+    }
+]

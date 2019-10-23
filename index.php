@@ -53,5 +53,6 @@
 <?php 
 	$data = file_get_contents("resources/dataPlayers.json");
 
-	echo $data;
+	$arry = json_decode($data,true);
+
  ?>
