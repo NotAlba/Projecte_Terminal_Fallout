@@ -67,6 +67,84 @@
 		return $array_ID;
 	}
 
+
+
+
+	function simbolosAyuda() {
+
+		$arrayAyuda = [];
+		$listaCaracterAyuda=[ '(' , '[' , '{' , '<' ];
+
+		for ($i=0; $i < 3; $i++) {
+			$longitudAyuda=rand(3,12);
+			$posicionAyuda=rand(0,(12-$longitudAyuda));
+
+			$posListaAyuda=rand(0,count($listaCaracterAyuda)-1);
+			$caracterPrincipio=$listaCaracterAyuda[$posListaAyuda];
+			$spanAyuda=$caracterPrincipio;
+			echo $longitudAyuda;
+
+			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+
+			if ( $caracterPrincipio=='(' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='(' || $simboloAyuda==')') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda.")";
+			}
+
+			elseif ( $caracterPrincipio=='[' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='[' || $simboloAyuda==']') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda."]";
+			}
+
+			elseif ( $caracterPrincipio=='{' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='{' || $simboloAyuda=='}') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda."}";
+			}
+
+			elseif ( $caracterPrincipio=='<' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='<' || $simboloAyuda=='>') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda.">";
+			}
+
+			$arrayAyuda[] = $spanAyuda;
+	 }
+
+
+	}
+
+
 	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
@@ -99,6 +177,13 @@
 		$string = preg_replace("/(on)/", " on", $string);
 		return $string;
 	}
+
+
+
+
+
+
+
 
 	function getPalabraCorrecta(){
 
