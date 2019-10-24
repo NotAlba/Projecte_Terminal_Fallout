@@ -1,10 +1,6 @@
 <?php
-
 	define('CARACTERES_TOTALES','390');
-
-
 	define('SIMBOLOS',devolverArrayEspeciales());
-
 	function devolverArrayEspeciales(){
 		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
 	}
@@ -18,12 +14,10 @@
 		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
 		return $stringFinal;
 	}
-
 	function leerArchivo(){
 		$ruta='../resources/diccionari_paraules.txt';
 		return $arr_palabras = file($ruta);
 	}
-
 	function eleccionPalabras($arr_palabras){
 		$arr_eleccion_palabra_indice=[];
 		$arr_palabras_elegidas=[];
@@ -36,31 +30,23 @@
 					$random_index=rand(0,$size_array_palabras);
 					}
 			}
-
 			$arr_eleccion_palabra_indice[] = $random_index;
 			$arr_palabras_elegidas[]= $arr_palabras[$random_index];
 			$i=$i+1;
 		}
 		return $arr_palabras_elegidas;
 	}
-
-
-
 	function creacionStringBase(){
 		$string = '';
 		for ($a=0; $a < CARACTERES_TOTALES ; $a++) {
-
 			//$caracter=htmlspecialchars(array_rand(SIMBOLOS),ENT_QUOTES);
 			$caracter=array_rand(SIMBOLOS);
 			$string=$string.SIMBOLOS[$caracter];
 		}
 		return $string;
 	}
-
 	function creacionID($arr_palabras_elegidas,$arrayAyuda){
-
 		$array_ID=[];
-
 		for ($a=0; $a <count($arr_palabras_elegidas) ; $a++) {
 			$base='pal'.$a;
 			$array_ID[]=$base;
@@ -71,25 +57,16 @@
 		}
 		return $array_ID;
 	}
-
-
-
-
 	function simbolosAyuda() {
-
 		$arrayAyuda = [];
 		$listaCaracterAyuda=[ '(' , '[' , '{' , '<' ];
-
 		for ($i=0; $i < 3; $i++) {
 			$longitudAyuda=rand(3,12);
 			$posicionAyuda=rand(0,(12-$longitudAyuda));
-
 			$posListaAyuda=rand(0,count($listaCaracterAyuda)-1);
 			$caracterPrincipio=$listaCaracterAyuda[$posListaAyuda];
 			$spanAyuda=$caracterPrincipio;
-
-			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
-
+			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
 			if ( $caracterPrincipio=='(' ) {
 				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
 					if ($simboloAyuda=='(' || $simboloAyuda==')') {
@@ -98,11 +75,10 @@
 					else {
 						$spanAyuda=$spanAyuda.$simboloAyuda;
 					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
 				}
 				$spanAyuda=$spanAyuda.")";
 			}
-
 			elseif ( $caracterPrincipio=='[' ) {
 				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
 					if ($simboloAyuda=='[' || $simboloAyuda==']') {
@@ -111,11 +87,10 @@
 					else {
 						$spanAyuda=$spanAyuda.$simboloAyuda;
 					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
 				}
 				$spanAyuda=$spanAyuda."]";
 			}
-
 			elseif ( $caracterPrincipio=='{' ) {
 				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
 					if ($simboloAyuda=='{' || $simboloAyuda=='}') {
@@ -124,11 +99,10 @@
 					else {
 						$spanAyuda=$spanAyuda.$simboloAyuda;
 					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
 				}
 				$spanAyuda=$spanAyuda."}";
 			}
-
 			elseif ( $caracterPrincipio=='<' ) {
 				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
 					if ($simboloAyuda=='<' || $simboloAyuda=='>') {
@@ -137,18 +111,15 @@
 					else {
 						$spanAyuda=$spanAyuda.$simboloAyuda;
 					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
 				}
 				$spanAyuda=$spanAyuda.">";
 			}
-
 			$arrayAyuda[] = $spanAyuda;
 	 }
-
+	 return $arrayAyuda;
 
 	}
-
-
 	function stringFinal($arr_palabras_elegidas,$string,$lista_ID, $simboAyuda){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
@@ -161,18 +132,12 @@
 				if (!in_array($caracter, SIMBOLOS)) {
 					$no_es_simbolo=$no_es_simbolo+1;
 				}
-
 			}
-
 			$palabra=$arr_palabras_elegidas[$y];
-
 			if ($no_es_simbolo==0) {
 				//$string=substr_replace($string, "<span id='".$lista_ID[$y]."' onClick='comprobar_pal(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
 				$string=substr_replace($string , $palabra, $random_posicion,$size_palabra );
-
-
 			}else{
-
 				$y-=1;
 			}
 		}
@@ -181,15 +146,6 @@
 		$string = preg_replace("/(on)/", " on", $string);
 		return $string;
 	}
-
-
-
-
-
-
-
-
 	function getPalabraCorrecta(){
-
 	}
 ?>
