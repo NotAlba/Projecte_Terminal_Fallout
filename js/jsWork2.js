@@ -46,7 +46,6 @@ function comprobar_pal(id,palabraCorrecta){
 			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
 		}else{
 			__juegoPerdido();
-			cronoFin();
 		}
 	}
 
@@ -54,9 +53,9 @@ function comprobar_pal(id,palabraCorrecta){
 		__juegoGanado();
 		document.getElementById("vaultboywin").className += " finjuegoimagen";
 		__cronoFin();
-		
+
 		setTimeout("__mensajePromptFinJuego()",50);
-		
+
 	}
 }
 
@@ -111,14 +110,14 @@ function __rellenarMensajes(contador){
 }
 
 function __juegoPerdido(){
-	document.getElementsByClassName("caracteres")[0].innerText = "has bloqueado el terminal!";
+	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
 	document.getElementById("divblink")[0].innerText = "";
 	document.getElementById("vaultboyloss").className += " finjuegoimagen";
 	document.getElementById("tiempoCrono").innerHTML = "";
-	
+
 
 
 	for (let i = 0; i<mensajesFallo.length;i++) {
@@ -129,7 +128,7 @@ function __juegoPerdido(){
 
 function __juegoGanado(){
 	let mensajesFallo = document.getElementsByClassName("mensajeFallo");
-	document.getElementsByClassName("caracteres")[0].innerText = "has desbloqueado el terminal!";
+	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";

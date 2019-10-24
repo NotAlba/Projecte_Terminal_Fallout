@@ -11,18 +11,21 @@
 		<div id="fondo">
 
       <img src="../img/pantalla.png" alt="fondo_pantalla">
+			<div id="pantalla-texto">
+				<div id="efecto"></div>
+				<div id="cargaDatos">
+					<p>DATOS GUARDADOS EN EL FICHERO</p>
 
-			<div id="cargaDatos">
-				<p>DATOS GUARDADOS EN EL FICHERO</p>
+					<p class="textDatos">Gracias por jugar</p>
+				</div>
 
-				<p class="textDatos">Gracias por jugar</p>
+				<div class="volver">
+					<form action="../index.php">
+					 <input type="submit" value="VOLVER" />
+					</form>
+				</div>
 			</div>
 
-			<div class="volver">
-				<form action="../index.php">
-				 <input type="submit" value="VOLVER" />
-				</form>
-			</div>
 
 
 		</div>

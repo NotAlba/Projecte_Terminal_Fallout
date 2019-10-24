@@ -19,13 +19,13 @@
   <body onload="cronoInicio()">
 
     <div id="fondo">
-      <div id="efecto"></div>
+      <!-- <div id="efecto"></div> -->
       <img src="../img/pantalla.png" alt="fondo_pantalla">
-      
-        <!-- El div (pantalla-texto) es para encajar todo el texto que aparece en la pantalla del juego sin que se vea fuera de sitio -->
-        
-        <div id="pantalla-texto">
 
+        <!-- El div (pantalla-texto) es para encajar todo el texto que aparece en la pantalla del juego sin que se vea fuera de sitio -->
+
+        <div id="pantalla-texto">
+          <div id="efecto"></div>
           <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
           <div id="info_vidas">
             <p id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
@@ -50,10 +50,10 @@
             <div class='buentrabajo' >
               <div id='vaultboywin'>
                 <img src="https://media.giphy.com/media/SHT4S1lOyAbaa6UvQZ/giphy.gif" alt="AnimacionGANADO" >
-              </div>  
+              </div>
               <div id='vaultboyloss'>
                 <img src="https://media.giphy.com/media/IbUkU9LrDgx9uEctjD/giphy.gif" alt="AnimacionPERDIDO">
-              </div>  
+              </div>
 
             </div>
             <div class="caracteres">
@@ -123,6 +123,9 @@
             <!-- El div (mensajes) es para los mensajes de ayuda al hacer pulsar una palabra -->
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
             <div id="mensajes">
+              <div id="divblink">
+                 <p>> </p><p class="blink">█</p>
+              </div>
               <div class="mensaje">
                 <p class="mensajeFallo"></p>
               </div>
@@ -141,15 +144,14 @@
               <div class="mensaje">
                 <p class="mensajeFallo"></p>
               </div>
+
             </div>
-            <div id="divblink">
-               <p>> </p><p class="blink">█</p>
-            </div>
+
 
           </div> <!-- div juego -->
         </div> <!-- div pantalla-texto -->
-        
-        
+
+
         <div class="resolucion-peque">
           <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
         </div>

@@ -28,7 +28,7 @@ body{
   margin: 10px auto;
   margin-top: -710px;
   height: 550px;;
-  width: 770px;
+  width: 820px;
   font-size: 22px;
 }
 
@@ -62,12 +62,13 @@ body{
   width: 100%;
   height: 100%;
   margin-top: 30px;
+  margin-left: 30px;
   display: flex;
   line-height: 25px;
 
 }
 #titulo_principal{
-  
+
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -77,7 +78,7 @@ body{
   from {
     text-shadow: 0 0 10px #02730a, 0 0 20px #02730a, 0 0 30px #00e600, 0 0 40px #00e600;
   }
-  
+
   to {
     text-shadow: 0 0 20px #02730a, 0 0 30px #4dff59, 0 0 40px #4dff59, 0 0 50px #4dff59;
   }
@@ -86,11 +87,12 @@ body{
 .opciones{
   position: relative;
   width: 100%;
-  height: 100%; 
+  height: 100%;
+  padding-top: 90px;
   text-align: center;
   line-height: 200%;
   z-index: 100;
-  
+
 }
 .opciones input{
   border: none;
@@ -115,20 +117,20 @@ body{
   margin-top: 10%;
   font-size: 40px;
   padding:10px;
-  
+
 }
 
 #opcion1{
   position: relative;
   top:20%;
-  
+
 
 }
 
 #opcion2{
   position: relative;
   top:22%;
-  
+
 
 }
 
@@ -152,7 +154,7 @@ body{
 
 #mensajes{
   width: 29%;
-  height: 80%;
+  height: 72%;
   margin-left: 25%;
   display: flex;
   flex-direction: column-reverse;
@@ -166,12 +168,7 @@ body{
 #divblink{
   height: 5%;
   width: auto;
-  margin-right: 10%;
-  margin-top: 50%;
   display: flex;
-  
-  
-
 }
 .blink {
   animation: parpadeo 1s step-start infinite;
@@ -187,22 +184,17 @@ body{
   visibility: hidden;
 }
 #efecto{
-
     position: absolute;
-    left: 25%;
-    top: 10%; 
-    width : 50%;
-    height : 50px;
+    width : 820px;
+    height : 60px;
     background-image: linear-gradient(to bottom,
     rgba(0, 209, 0, 0),
     rgba(0, 209, 0, 1));
-    animation: scanning 6s linear infinite; 
-    
-    transition-delay: initial;
-    
-    z-index: -20;
-    
+    animation: scanning 6s linear infinite;
 
+    transition-delay: initial;
+
+    z-index: -20;
   }
   @keyframes scanning {
     60%, 100% { opacity:0;transform: translate(0, 460px); }
@@ -221,14 +213,14 @@ body{
   visibility: hidden;
   -webkit-transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
-  
-  
+
+
 }
 
-    
 
-  
-  
+
+
+
 
 
 
@@ -257,7 +249,7 @@ body{
     width: 800px;
     height: auto;
   }
-  
+
 
   #pantalla-texto{
     height: 460px;
@@ -294,7 +286,7 @@ body{
   #divblink{
     visibility: hidden;
   }
-  
+
 
 
   .resolucion-peque{
