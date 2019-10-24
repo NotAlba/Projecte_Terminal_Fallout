@@ -22,7 +22,7 @@
         <div id="pantalla-texto">
 
           <div class="opciones">
-            <H1>TERMINAL FALLOUT</H1>
+            <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
             <div id="opcion1">
              <form action="html/index.php">
