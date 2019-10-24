@@ -18,9 +18,9 @@
 
       <img src="./img/pantalla.png" alt="fondo_pantalla">
         <div id="relleno"></div>
-       
+       <div id="efecto"></div>
         <div id="pantalla-texto">
-
+          
           <div class="opciones">
             <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
