@@ -52,8 +52,9 @@ function comprobar_pal(id,palabraCorrecta){
 
 	else{
 		__juegoGanado();
-		__cronoFin();
 		document.getElementById("vaultboywin").className += " finjuegoimagen";
+		__cronoFin();
+		
 		setTimeout("__mensajePromptFinJuego()",50);
 		
 	}
@@ -114,9 +115,10 @@ function __juegoPerdido(){
 	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
 	document.getElementsByClassName("codigo")[1].innerText = "";
-
-	document.getElementById("tiempoCrono").innerHTML = "";
+	document.getElementById("divblink")[0].innerText = "";
 	document.getElementById("vaultboyloss").className += " finjuegoimagen";
+	document.getElementById("tiempoCrono").innerHTML = "";
+	
 
 
 	for (let i = 0; i<mensajesFallo.length;i++) {

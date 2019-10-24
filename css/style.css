@@ -163,10 +163,53 @@ body{
   height: 15%;
 }
 
+#divblink{
+  height: 5%;
+  width: auto;
+  margin-right: 10%;
+  margin-top: 50%;
+  display: flex;
+  
+  
+
+}
+.blink {
+  animation: parpadeo 1s step-start infinite;
+}
+
+@keyframes parpadeo {
+  50% {
+    opacity: 0;
+  }
+}
+
 .resolucion-peque{
   visibility: hidden;
 }
+#efecto{
 
+    position: absolute;
+    left: 25%;
+    top: 10%; 
+    width : 50%;
+    height : 50px;
+    background-image: linear-gradient(to bottom,
+    rgba(0, 209, 0, 0),
+    rgba(0, 209, 0, 1));
+    animation: scanning 6s linear infinite; 
+    
+    transition-delay: initial;
+    
+    z-index: -20;
+    
+
+  }
+  @keyframes scanning {
+    60%, 100% { opacity:0;transform: translate(0, 460px); }
+    0% {opacity: 0;}
+    10% {opacity: 1;
+  }
+}
 
 .buentrabajo img{
   position: absolute;
@@ -181,37 +224,15 @@ body{
   
   
 }
-#efecto{
-    content : '';
-    position : absolute;
-    left: 10%;
-    top: 7%; 
-    width : 750px;
-    height : 50px;
-    background-image: linear-gradient(to bottom,
-    rgba(0, 209, 0, 0),
-    rgba(0, 209, 0, 1));
-    animation: scanning 6s linear infinite; 
-    
-    transition-delay: initial;
-    
-    z-index: -4;
+
     
 
-  }
+  
   
 
-@keyframes scanning {
-    60%, 100% { opacity:0;transform: translate(0, 460px); }
-    0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-}
 
-}
+
+
 
 .finjuegoimagen img{
   position: absolute;
@@ -236,6 +257,7 @@ body{
     width: 800px;
     height: auto;
   }
+  
 
   #pantalla-texto{
     height: 460px;
@@ -269,6 +291,11 @@ body{
   #pantalla-texto{
     visibility: hidden;
   }
+  #divblink{
+    visibility: hidden;
+  }
+  
+
 
   .resolucion-peque{
     visibility: visible;
