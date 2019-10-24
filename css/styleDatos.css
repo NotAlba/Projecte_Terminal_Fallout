@@ -1,0 +1,40 @@
+#cargaDatos{
+  margin: 0 auto;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  padding-top: 200px;;
+  font-size: 25px;
+}
+
+.textDatos{
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+
+.volver{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 200%;
+
+}
+
+.volver input{
+  border: none;
+  background-color: transparent;
+  width:200px;
+  height: 30px;
+  color: #7CFC00;
+  font-family: 'Share Tech Mono', Arial, monospace ;
+  font-size: 20px;
+}
+
+.volver input:hover{
+  background-color: #67FF1D;
+  color: #000;
+  cursor: pointer;
+
+}

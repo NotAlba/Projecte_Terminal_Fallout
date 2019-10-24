@@ -12,9 +12,10 @@
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
 		$palabras_elegidas = eleccionPalabras($array);
-		$lista_ID=creacionID($palabras_elegidas);
+		$simboAyuda = simbolosAyuda();
+		$lista_ID=creacionID($palabras_elegidas,$simboAyuda);
 		$simbolosString = creacionStringBase();
-		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID);
+		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
 		return $stringFinal;
 	}
 
@@ -56,7 +57,7 @@
 		return $string;
 	}
 
-	function creacionID($arr_palabras_elegidas){
+	function creacionID($arr_palabras_elegidas,$arrayAyuda){
 
 		$array_ID=[];
 
@@ -64,10 +65,91 @@
 			$base='pal'.$a;
 			$array_ID[]=$base;
 		}
+		for ($i=0; $i < count($arrayAyuda); $i++) {
+			$ayuda='ayuda'.$i;
+			$array_ID[]=$ayuda;
+		}
 		return $array_ID;
 	}
 
-	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
+
+
+
+	function simbolosAyuda() {
+
+		$arrayAyuda = [];
+		$listaCaracterAyuda=[ '(' , '[' , '{' , '<' ];
+
+		for ($i=0; $i < 3; $i++) {
+			$longitudAyuda=rand(3,12);
+			$posicionAyuda=rand(0,(12-$longitudAyuda));
+
+			$posListaAyuda=rand(0,count($listaCaracterAyuda)-1);
+			$caracterPrincipio=$listaCaracterAyuda[$posListaAyuda];
+			$spanAyuda=$caracterPrincipio;
+
+			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+
+			if ( $caracterPrincipio=='(' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='(' || $simboloAyuda==')') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda.")";
+			}
+
+			elseif ( $caracterPrincipio=='[' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='[' || $simboloAyuda==']') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda."]";
+			}
+
+			elseif ( $caracterPrincipio=='{' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='{' || $simboloAyuda=='}') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda."}";
+			}
+
+			elseif ( $caracterPrincipio=='<' ) {
+				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
+					if ($simboloAyuda=='<' || $simboloAyuda=='>') {
+						$j--;
+					}
+					else {
+						$spanAyuda=$spanAyuda.$simboloAyuda;
+					}
+					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS))];
+				}
+				$spanAyuda=$spanAyuda.">";
+			}
+
+			$arrayAyuda[] = $spanAyuda;
+	 }
+
+
+	}
+
+
+	function stringFinal($arr_palabras_elegidas,$string,$lista_ID, $simboAyuda){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
 		for ($y=0; $y < $size_array_elegidas; $y++){
@@ -99,6 +181,13 @@
 		$string = preg_replace("/(on)/", " on", $string);
 		return $string;
 	}
+
+
+
+
+
+
+
 
 	function getPalabraCorrecta(){
 
