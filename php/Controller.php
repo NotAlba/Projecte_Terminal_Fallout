@@ -1,13 +1,25 @@
 <?php
 	define('CARACTERES_TOTALES','390');
 	define('SIMBOLOS',devolverArrayEspeciales());
+
 	function devolverArrayEspeciales(){
 		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
+	}
+	function elegirDificultad(){
+		$facil= 6;
+		$intermedio= 7;
+		$dificil = 12;
+
+		//HARDCODED, mas adelante convertir en una serie de ifs.
+		$nivel=$dificil;
+
+		return $nivel;
 	}
 	function obtenerPalabrasConSimbolitos(){
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
-		$palabras_elegidas = eleccionPalabras($array);
+		$numeroPalabrasElegidas= elegirDificultad();
+		$palabras_elegidas = eleccionPalabras($array,$numeroPalabrasElegidas);
 		$simboAyuda = simbolosAyuda();
 		$lista_ID=creacionID($palabras_elegidas,$simboAyuda);
 		$simbolosString = creacionStringBase();
@@ -18,12 +30,12 @@
 		$ruta='../resources/diccionari_paraules.txt';
 		return $arr_palabras = file($ruta);
 	}
-	function eleccionPalabras($arr_palabras){
+	function eleccionPalabras($arr_palabras, $num_palabras){
 		$arr_eleccion_palabra_indice=[];
 		$arr_palabras_elegidas=[];
 		$i=0;
 		$size_array_palabras=count($arr_palabras)-1;
-		while ($i<8){
+		while ($i<$num_palabras){
 			$random_index=rand(0,$size_array_palabras);
 			if (in_array($random_index, $arr_eleccion_palabra_indice)) {
 				while (in_array($random_index, $arr_eleccion_palabra_indice)) {

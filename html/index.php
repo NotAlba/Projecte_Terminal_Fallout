@@ -58,13 +58,13 @@
             </div>
             <div class="caracteres">
               <?php
-
+              $num_palabras=elegirDificultad();
               $array_ID=[];
-              for ($a=0; $a <7 ; $a++) {
+              for ($a=0; $a <$num_palabras ; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
               }
-                $palabraCorrecta = $array_ID[rand(0,5)];
+                $palabraCorrecta = $array_ID[rand(0,$num_palabras-1)];
                 $listaSimbolos=devolverArrayEspeciales();
 
                 $contador=0;
@@ -101,7 +101,7 @@
                   }
 
                 }
-                echo $guardado;
+                echo "<div class='typing'>".$guardado."</div>";
 
               ?>
 

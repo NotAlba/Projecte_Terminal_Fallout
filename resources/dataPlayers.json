@@ -20,9 +20,34 @@
         "tiempo": "00:02"
     },
     {
+        "nombre": "Vaultboy",
+        "fallos": "2",
+        "tiempo": "00:02"
+    },
+    {
+        "nombre": "",
+        "fallos": "3",
+        "tiempo": "00:04"
+    },
+    {
+        "nombre": "Chris Pratts",
+        "fallos": "3",
+        "tiempo": "00:04"
+    },
+    {
         "nombre": "",
         "fallos": "3",
         "tiempo": "00:05"
+    },
+    {
+        "nombre": "",
+        "fallos": "3",
+        "tiempo": "00:06"
+    },
+    {
+        "nombre": "",
+        "fallos": "3",
+        "tiempo": "00:06"
     },
     {
         "nombre": "Calamardo",
