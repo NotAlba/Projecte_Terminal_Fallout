@@ -23,13 +23,13 @@
         <div id="efecto"></div>
         <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
-        <div class="opcionDaltonico">
+        <div class="opcionesExtra">
           <label class="checkbox-inline">
-            Extremo <input type="checkbox" data-toggle="toggle">
+            <input id="daltonico" type="checkbox" data-toggle="toggle"> Daltonico
           </label>
-
+          <br>
           <label class="checkbox-inline">
-            <input type="checkbox" data-toggle="toggle"> Daltonico
+            <input id="extremo" type="checkbox" data-toggle="toggle"> Extremo
           </label>
         </div>
 
@@ -43,7 +43,6 @@
               <a id="facil" href="html/index.php">FÁCIL</a>
               <a id="normal" href="html/index.php">NORMAL</a>
               <a id="dificil" href="html/index.php">DIFÍCIL</a>
-              <input type="checkbox"  value="">
             </div>
           </div>
 
@@ -54,10 +53,6 @@
           </div>
 
         </div>
-
-
-
-
 
       </div> <!-- div pantalla-texto -->
       <div class="resolucion-peque">

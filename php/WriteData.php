@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/styleDatos.css" media="all">
+		<meta http-equiv="Refresh" content="2;url=../html/ranking.php">
 	</head>
 	<body>
 		<div id="fondo">
@@ -14,15 +15,9 @@
 			<div id="pantalla-texto">
 				<div id="efecto"></div>
 				<div id="cargaDatos">
-					<p>DATOS GUARDADOS EN EL FICHERO</p>
-
+					<p>GUARDANDO DATOS EN EL FICHERO</p>
+					
 					<p class="textDatos">Gracias por jugar</p>
-				</div>
-
-				<div class="volver">
-					<form action="../index.php">
-					 <input type="submit" value="VOLVER" />
-					</form>
 				</div>
 			</div>
 
