@@ -6,6 +6,7 @@
     <title>juego</title>
     <link rel="stylesheet" type="text/css" href="./css/resetCSS.css" media="all">
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./css/stylePortada.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 
@@ -23,11 +24,24 @@
         <div class="opciones">
           <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
+          <div class="opcion1">
+            <button class="botonJugar">JUGAR</button>
+            <div class="niveles">
+              <a href="#">FÁCIL</a>
+              <a href="#">NORMAL</a>
+              <a href="#">DIFÍCIL</a>
+            </div>
+          </div>
+
+
+<!--
           <div id="opcion1">
            <form action="html/index.php">
             <input type="submit" value="JUGAR" />
            </form>
           </div>
+-->
+
           <div id="opcion2">
             <form action="html/ranking.php">
               <input type="submit" value="RANKING" />
