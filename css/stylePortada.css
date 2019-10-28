@@ -38,20 +38,24 @@
   cursor: pointer;
 }
 
-.opciones h1{
+#pantalla-texto h1{
   margin-top: 10%;
-  font-size: 40px;
+  font-size: 60px;
   padding:10px;
 }
 
-.botonJugar {
-	border: none;
-  background-color: transparent;
+.juegar{
   width:200px;
   height: 30px;
+}
+.juegar a{
+  border: none;
+  background-color: transparent;
   color: #7CFC00;
   font-family: 'Share Tech Mono', Arial, monospace ;
   font-size: 20px;
+  text-decoration: none;
+
 }
 
 .opcion1 {
@@ -64,16 +68,17 @@
   position: absolute;
   min-width: 200px;
 	background-color: #222;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  margin-top: -70px;
 }
 
 .niveles a {
 	height: 40px;
   color: #7CFC00;
-
   text-decoration: none;
   display: block;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
 .niveles a:hover {
@@ -86,7 +91,7 @@
 	display: block;
 }
 
-.opcion1:hover .botonJugar {
+.opcion1:hover .juegar a{
 	background-color: #67FF1D;
 	color: #000;
 }
@@ -94,7 +99,15 @@
 
 
 
-
+.opcionDaltonico{
+  position: relative;
+  text-align: right;
+  width: 95%;
+  z-index: 32;
+  margin-top: -170px;
+  margin-bottom: 110px;
+  font-size: 15px;
+}
 
 
 

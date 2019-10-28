@@ -21,33 +21,44 @@
 
       <div id="pantalla-texto">
         <div id="efecto"></div>
+        <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
+
+        <div class="opcionDaltonico">
+          <label class="checkbox-inline">
+            Extremo <input type="checkbox" data-toggle="toggle">
+          </label>
+
+          <label class="checkbox-inline">
+            <input type="checkbox" data-toggle="toggle"> Daltonico
+          </label>
+        </div>
+
         <div class="opciones">
-          <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
           <div class="opcion1">
-            <button class="botonJugar">JUGAR</button>
+            <div class="juegar">
+              <a>JUGAR</a>
+            </div>
             <div class="niveles">
-              <a href="#">FÁCIL</a>
-              <a href="#">NORMAL</a>
-              <a href="#">DIFÍCIL</a>
+              <a id="facil" href="html/index.php">FÁCIL</a>
+              <a id="normal" href="html/index.php">NORMAL</a>
+              <a id="dificil" href="html/index.php">DIFÍCIL</a>
+              <input type="checkbox"  value="">
             </div>
           </div>
-
-
-<!--
-          <div id="opcion1">
-           <form action="html/index.php">
-            <input type="submit" value="JUGAR" />
-           </form>
-          </div>
--->
 
           <div id="opcion2">
             <form action="html/ranking.php">
               <input type="submit" value="RANKING" />
             </form>
           </div>
+
         </div>
+
+
+
+
+
       </div> <!-- div pantalla-texto -->
       <div class="resolucion-peque">
         <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
