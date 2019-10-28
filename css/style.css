@@ -183,6 +183,18 @@ body{
 .resolucion-peque{
   visibility: hidden;
 }
+
+.tping{
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingAnim 5s steps(50);
+}
+
+@keyframes typingAnim{
+  from { width: 0 }
+  to { width: 100% }
+}
+
 #efecto{
     position: absolute;
     width : 710px;

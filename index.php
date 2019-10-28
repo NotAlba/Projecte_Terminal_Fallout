@@ -31,6 +31,14 @@
           <div id="opcion2">
             <form action="html/ranking.php">
               <input type="submit" value="RANKING" />
+              <DIV class="typing">
+                <?php  
+                for ($i=0; $i <10 ; $i++) { 
+                  echo"<h1>a <span>ver</span> VAMOOOOOOOOOS</h1>";
+                }
+                  
+                ?>
+              </DIV>
             </form>
           </div>
         </div>

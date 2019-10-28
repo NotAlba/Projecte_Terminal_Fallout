@@ -23,7 +23,7 @@
 		$arr_palabras_elegidas=[];
 		$i=0;
 		$size_array_palabras=count($arr_palabras)-1;
-		while ($i<6){
+		while ($i<8){
 			$random_index=rand(0,$size_array_palabras);
 			if (in_array($random_index, $arr_eleccion_palabra_indice)) {
 				while (in_array($random_index, $arr_eleccion_palabra_indice)) {

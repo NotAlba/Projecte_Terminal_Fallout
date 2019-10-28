@@ -60,7 +60,7 @@
               <?php
 
               $array_ID=[];
-              for ($a=0; $a <6 ; $a++) {
+              for ($a=0; $a <7 ; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
               }
@@ -70,37 +70,38 @@
                 $contador=0;
                 $contadorInterno=0;
                 $contadorID=0;
-
+                $guardado="";
                 foreach ($listaCaracter as $caracter ) {
 
                   if ($caracter!='+' && $caracter!='-'){
                     $caracter_modificado=html_entity_decode($caracter);
                     if (!in_array($caracter_modificado, $listaSimbolos)) {
                       if ($contadorInterno==0) {
-                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.")'>".$caracter_modificado;
+                        $guardado .= "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
                       elseif ($contadorInterno==4) {
-                        echo $caracter_modificado."</span>";
+                        $guardado .= $caracter_modificado."</span>";
                         $contadorInterno=0;
                         $contadorID+=1;
 
                       }else{
-                        echo $caracter_modificado;
+                        $guardado .= $caracter_modificado;
                         $contadorInterno+=1;
                       }
 
                     }else{
-                      echo $caracter_modificado;
+                      $guardado .= $caracter_modificado;
                     }
 
                     $contador+=1;
                   }
                   if ($contador%12==0) {
-                    echo "</br>";
+                    $guardado .= "</br>";
                   }
 
                 }
+                echo $guardado;
 
               ?>
 
