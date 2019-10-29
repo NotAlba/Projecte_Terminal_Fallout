@@ -41,7 +41,7 @@
             <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
             <div class="codigo">
               <?php
-                for ($i=0; $i < 16; $i++) {
+                for ($i=0; $i < 32; $i++) {
                   $num = rand(10,99);
                   echo "Ex0$num&nbsp <br>";
                 }
@@ -106,14 +106,7 @@
 
             </div>
 
-            <div class="codigo">
-              <?php
-                for ($i=0; $i < 16; $i++) {
-                  $num = rand(10,99);
-                  echo "Ex1$num&nbsp <br>";
-                }
-              ?>
-            </div>
+            
 
 
 
