@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>juego</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -106,7 +107,7 @@
 
             </div>
 
-            
+
 
 
 

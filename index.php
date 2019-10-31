@@ -21,7 +21,6 @@
 
       <div id="pantalla-texto">
         <div id="efecto"></div>
-        <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
         <div class="opcionesExtra">
           <label class="checkbox-inline">
@@ -32,6 +31,8 @@
             <input id="extremo" type="checkbox" data-toggle="toggle"> Extremo
           </label>
         </div>
+
+        <H1 id="titulo_principal">TERMINAL FALLOUT</H1>
 
         <div class="opciones">
 
@@ -47,9 +48,7 @@
           </div>
 
           <div id="opcion2">
-            <form action="html/ranking.php">
-              <input type="submit" value="RANKING" />
-            </form>
+            <a href="html/ranking.php">RANKING</a>
           </div>
 
         </div>
