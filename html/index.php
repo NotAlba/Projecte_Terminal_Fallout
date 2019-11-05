@@ -1,3 +1,13 @@
+<?php 
+
+    session_start();
+    if(isset($_SESSION['nombre'])){
+      $nombre =  $_SESSION['nombre'];
+    }else{
+      $nombre = '';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -11,6 +21,7 @@
 
     <?php
       include '../php/Controller.php';
+      //print_r(array_values(generateHelps())) ;
       $array_palabras = obtenerPalabrasConSimbolitos(); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
       $decode = html_entity_decode($array_palabras);
@@ -71,38 +82,49 @@
                 $contador=0;
                 $contadorInterno=0;
                 $contadorID=0;
+                $fila = 0;
+                $hayPalabra = 0;
+                $guardado="";
 
+
+                
+                $helps = generateHelps();
+                $arraySinPalabras = array();
                 foreach ($listaCaracter as $caracter ) {
-
-                  if ($caracter!='+' && $caracter!='-'){
                     $caracter_modificado=html_entity_decode($caracter);
                     if (!in_array($caracter_modificado, $listaSimbolos)) {
+                      $hayPalabra = 1;
                       if ($contadorInterno==0) {
-                        echo "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.")'>".$caracter_modificado;
+                         $guardado .= "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
                       elseif ($contadorInterno==4) {
-                        echo $caracter_modificado."</span>";
+                         $guardado .= $caracter_modificado."</span>";
                         $contadorInterno=0;
                         $contadorID+=1;
 
                       }else{
-                        echo $caracter_modificado;
+                         $guardado .= $caracter_modificado;
                         $contadorInterno+=1;
                       }
 
                     }else{
-                      echo $caracter_modificado;
+                       $guardado .= $caracter_modificado;
                     }
 
                     $contador+=1;
-                  }
+                  
                   if ($contador%12==0) {
-                    echo "</br>";
+                    if($hayPalabra != 1){
+                      array_push($arraySinPalabras, $fila);
+                    }
+                    $fila++;
+                    $hayPalabra = 0;
+                    $guardado .= "</br>";
                   }
 
                 }
-
+                echo $guardado;
               ?>
 
             </div>
@@ -159,3 +181,7 @@
     </form>
   </body>
 </html>
+
+<?php 
+  print_r(array_values($helps));
+ ?>

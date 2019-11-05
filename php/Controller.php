@@ -1,3 +1,4 @@
+
 <?php
 	define('CARACTERES_TOTALES','390');
 	define('SIMBOLOS',devolverArrayEspeciales());
@@ -147,5 +148,47 @@
 		return $string;
 	}
 	function getPalabraCorrecta(){
+	}
+
+	function generateHelps(){
+		$simbolos = ['!','$','%','/','=','?','|','#'];
+		$simbolosOpenClose = array("{","(","<","[");
+		$ayudas = 3;
+		$helps = array();
+
+		for($k=0; $k  < $ayudas ; $k++){
+			$size = rand(1,10);
+			$help = '';
+			$inicio = $simbolosOpenClose[rand(0,count($simbolosOpenClose)-1)];
+			for ($i=0; $i  < $size ; $i++) {
+				if($i == 0){
+					$help .= htmlspecialchars($inicio,ENT_QUOTES);
+					$help .= $simbolos[rand(0,count($simbolos)-1)];
+				}
+
+				if ($i == $size-1) {
+					switch ($inicio) {
+					    case "{":
+							$help .= "}";
+					        break;
+					    case "(":
+							$help .= ")";
+					        break;
+					    case "<":
+							$help .= ">";
+					        break;
+					    case "[":
+							$help .= "]";
+					    	break;
+					}
+				}
+				if($i != 0 & $i != $size-1){
+					$help .= $simbolos[rand(0,count($simbolos)-1)];
+				}
+			}
+			array_push($helps, $help);
+		}
+		return $helps;
+		
 	}
 ?>

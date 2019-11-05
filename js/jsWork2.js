@@ -1,8 +1,10 @@
 //metodo implementado
 let intentosGlobal= 4;
 let intentosConsumidos = 0;
+let nombreSession = '';
 console.log("intentos:" , intentosGlobal)
-function comprobar_pal(id,palabraCorrecta){
+function comprobar_pal(id,palabraCorrecta,nombre){
+	nombreSession = nombre;
 	id.classList.add("disabled");
 	adicionPuntos = ".....";
 	let vida = "<span>[]</span>&nbsp";
@@ -133,7 +135,7 @@ function __juegoGanado(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
-	document.getElementsByClassName("codigo")[1].innerText = "";
+	//document.getElementsByClassName("codigo")[1].innerText = "";
 
 	for (let i = 0; i<mensajesFallo.length;i++) {
 
@@ -178,7 +180,7 @@ function __cronoFin() {
 
 
 function __mensajePromptFinJuego() {
-	let nombreJugador = prompt("Escribe tu nombre");
+	let nombreJugador = prompt("Escribe tu nombre",nombreSession);
 	if (seg < 10) {
 		seg = "0" + (seg-1);
 	}
