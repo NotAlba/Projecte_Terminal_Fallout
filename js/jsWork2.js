@@ -47,7 +47,7 @@ function comprobar_pal(id,palabraCorrecta){
 		}else{
 			document.getElementById("vaultboyloss").className += " finjuegoimagen";
 			document.getElementById("tiempoCrono").innerHTML = "";
-			
+
 			__juegoPerdido();
 
 		}
@@ -116,8 +116,8 @@ function __rellenarMensajes(contador){
 function __juegoPerdido(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
-	
-	
+
+
 
 
 
@@ -133,7 +133,6 @@ function __juegoGanado(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
-	document.getElementsByClassName("codigo")[1].innerText = "";
 
 	for (let i = 0; i<mensajesFallo.length;i++) {
 

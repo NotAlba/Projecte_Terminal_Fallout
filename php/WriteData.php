@@ -16,7 +16,7 @@
 				<div id="efecto"></div>
 				<div id="cargaDatos">
 					<p>GUARDANDO DATOS EN EL FICHERO</p>
-					
+
 					<p class="textDatos">Gracias por jugar</p>
 				</div>
 			</div>
