@@ -1,5 +1,4 @@
 <?php 
-  var_dump($_POST);
     session_start();
     if(isset($_SESSION['nombre'])){
       $nombre =  $_SESSION['nombre'];
@@ -31,7 +30,7 @@
   </head>
 
   <body onload="cronoInicio()">
-
+    <p id="dificultadChoose" hidden><?php echo $dificultad ?></p>
     <div id="fondo">
       <!-- <div id="efecto"></div> -->
       <img src="../img/pantalla.png" alt="fondo_pantalla">

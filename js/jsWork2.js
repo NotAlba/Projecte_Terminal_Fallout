@@ -6,7 +6,11 @@ console.log("intentos:" , intentosGlobal)
 function comprobar_pal(id,palabraCorrecta,nombre){
 	nombreSession = nombre;
 	id.classList.add("disabled");
-	adicionPuntos = ".....";
+	if(document.getElementById('dificultadChoose').innerHTML == 'facil'){
+		adicionPuntos = ".....";
+	}else{
+		adicionPuntos = ".......";
+	}
 	let vida = "<span>[]</span>&nbsp";
 	let contador = 0;
 	let palabraSeleccionada = palabra = id.innerHTML;
@@ -23,21 +27,42 @@ function comprobar_pal(id,palabraCorrecta,nombre){
 					contador++;
 				}
 			}
-			if(posicionBr == 1){
-				adicionPuntos = ".<br>...."
+			if(document.getElementById('dificultadChoose').innerHTML == 'facil'){
+				if(posicionBr == 1){
+					adicionPuntos = ".<br>...."
 
-			}else if (posicionBr == 2) {
+				}
+				else if (posicionBr == 2) {
 
-			}
-			else if (posicionBr == 2) {
+					adicionPuntos = "..<br>..."
+				}
+				else if (posicionBr == 3) {
+					adicionPuntos = "...<br>.."
+				}
+				else if (posicionBr == 4) {
+					adicionPuntos = "....<br>."
+				}
+			}else{
+				if(posicionBr == 1){
+					adicionPuntos = ".<br>......"
 
-				adicionPuntos = "..<br>..."
-			}
-			else if (posicionBr == 3) {
-				adicionPuntos = "...<br>.."
-			}
-			else if (posicionBr == 4) {
-				adicionPuntos = "....<br>."
+				}
+				else if (posicionBr == 2) {
+
+					adicionPuntos = "..<br>....."
+				}
+				else if (posicionBr == 3) {
+					adicionPuntos = "...<br>...."
+				}
+				else if (posicionBr == 4) {
+					adicionPuntos = "....<br>..."
+				}
+				else if (posicionBr == 5) {
+					adicionPuntos = ".....<br>.."
+				}
+				else if (posicionBr == 6) {
+					adicionPuntos = "......<br>."
+				}				
 			}
 
 			__rellenarMensajes(contador);
@@ -182,7 +207,7 @@ function __cronoFin() {
 function __mensajePromptFinJuego() {
 	let nombreJugador = prompt("Escribe tu nombre",nombreSession);
 	if (seg < 10) {
-		seg = "0" + (seg-1);
+		seg = "0" + (seg);
 	}
 
 	document.getElementById("intentos").innerHTML = nombreJugador +" - Tiempo: "+ min+":"+seg +" - Vidas: "+ intentosGlobal;
