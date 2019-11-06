@@ -3,28 +3,53 @@
 	define('CARACTERES_TOTALES','390');
 	define('SIMBOLOS',devolverArrayEspeciales());
 	function devolverArrayEspeciales(){
-		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
+		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];
 	}
+
 	function obtenerPalabrasConSimbolitos($dificultad){
 		$a =  CARACTERES_TOTALES;
-		$array = leerArchivo();
-		$palabras_elegidas = eleccionPalabras($array);
+		$array = leerArchivo($dificultad);
+		$palabras_elegidas = eleccionPalabras($array,$dificultad);
 		$simboAyuda = generateHelps();
-		$lista_ID=creacionID($palabras_elegidas,$simboAyuda);
+		$lista_ID=creacionID($palabras_elegidas,$simboAyuda, $dificultad);
 		$simbolosString = creacionStringBase();
 		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
 		return $stringFinal;
 	}
-	function leerArchivo(){
-		$ruta='../resources/diccionari_paraules.txt';
+	function leerArchivo($dificultad){
+		if ($dificultad=='facil'){
+			$ruta='../resources/diccionari_paraules.txt';
+		}else{
+			$ruta='../resources/diccionari_paraules_normal.txt';
+		}
+		
 		return $arr_palabras = file($ruta);
 	}
-	function eleccionPalabras($arr_palabras){
+	function devolverDificultad($dificultad){
+		if ($dificultad=='facil') {
+			$num_palabras=6;
+		}elseif ($dificultad=='normal') {
+			$num_palabras=7;
+		}else{
+			$num_palabras=12;
+		}
+		return $num_palabras;
+	}
+
+	function eleccionPalabras($arr_palabras,$dificultad){
+		if ($dificultad=='facil') {
+			$num_palabras=6;
+		}elseif ($dificultad=='normal') {
+			$num_palabras=7;
+		}else{
+			$num_palabras=12;
+		}
+
 		$arr_eleccion_palabra_indice=[];
 		$arr_palabras_elegidas=[];
 		$i=0;
 		$size_array_palabras=count($arr_palabras)-1;
-		while ($i<6){
+		while ($i<$num_palabras){
 			$random_index=rand(0,$size_array_palabras);
 			if (in_array($random_index, $arr_eleccion_palabra_indice)) {
 				while (in_array($random_index, $arr_eleccion_palabra_indice)) {

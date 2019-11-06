@@ -208,4 +208,4 @@ function eleccionDificultad(dificultad){
 	document.getElementById('dificultadElegida').value = dificultad.id; 
 	document.getElementById('formDificultad').submit();
 }
-//
+

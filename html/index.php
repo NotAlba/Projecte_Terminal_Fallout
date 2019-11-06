@@ -1,5 +1,5 @@
 <?php 
-
+  var_dump($_POST);
     session_start();
     if(isset($_SESSION['nombre'])){
       $nombre =  $_SESSION['nombre'];
@@ -21,9 +21,9 @@
 
     <?php
       include '../php/Controller.php';
-
       //print_r(array_values(generateHelps())) ;
-      $array_palabras = obtenerPalabrasConSimbolitos($_POST['dificultadElegida']); // esto es un string
+      $dificultad=$_POST['dificultadElegida'];
+      $array_palabras = obtenerPalabrasConSimbolitos($dificultad); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
       $decode = html_entity_decode($array_palabras);
       // echo $array_palabras;
@@ -72,13 +72,15 @@
             </div>
             <div class="caracteres">
               <?php
-
+              $num_palabras=devolverDificultad($dificultad);
               $array_ID=[];
-              for ($a=0; $a <7 ; $a++) {
+              for ($a=0; $a <$num_palabras; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
+
               }
-                $palabraCorrecta = $array_ID[rand(0,5)];
+              
+                $palabraCorrecta = $array_ID[rand(0,$num_palabras-1)];
                 $listaSimbolos=devolverArrayEspeciales();
 
                 $contador=0;
@@ -89,10 +91,16 @@
                 $fila = 1;
                 $hayPalabra = 0;
                 $guardado="";
-
+                $size_palabras=0;
                 $helps = generateHelps();
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
+
+                if ($num_palabras==6) {
+                  $size_palabras=5;
+                }else{
+                  $size_palabras=7;
+                }
                 
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
@@ -102,7 +110,7 @@
                          $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
-                      elseif ($contadorInterno==4) {
+                      elseif ($contadorInterno==$size_palabras-1) {
                          $guardado .= $caracter_modificado."</span>";
                         $contadorInterno=0;
                         $contadorID+=1;
@@ -113,7 +121,7 @@
                       }
 
                     }elseif ($caracter_modificado=='+') {
-                        $guardado .= '='."<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>";
+                        $guardado .= '='."<span onClick='ayuda(".$palabraCorrecta.")'>";
 
                   
                     }
