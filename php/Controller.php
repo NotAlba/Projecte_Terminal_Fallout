@@ -2,6 +2,7 @@
 <?php
 	define('CARACTERES_TOTALES','390');
 	define('SIMBOLOS',devolverArrayEspeciales());
+	define('SIMBOAYUDA', generateHelps());
 	function devolverArrayEspeciales(){
 		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];
 	}
@@ -10,11 +11,12 @@
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo($dificultad);
 		$palabras_elegidas = eleccionPalabras($array,$dificultad);
-		$simboAyuda = generateHelps();
-		$lista_ID=creacionID($palabras_elegidas,$simboAyuda, $dificultad);
+		
+		$lista_ID=creacionID($palabras_elegidas,SIMBOAYUDA, $dificultad);
 		$simbolosString = creacionStringBase();
-		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
-		return $stringFinal;
+		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID);
+		$stringFinalConAyudas= stringFinal(SIMBOAYUDA,$stringFinal, $lista_ID);
+		return $stringFinalConAyudas;
 	}
 	function leerArchivo($dificultad){
 		if ($dificultad=='facil'){
@@ -84,23 +86,20 @@
 		return $array_ID;
 	}
 	
-	function stringFinal($arr_palabras_elegidas,$string,$lista_ID, $simboAyuda){
+	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
-		$filasProhibidas=[];
-		$filasDisponibles=[];
-		$sizeSimboAyuda=count($simboAyuda);
+
+		
+		
 		
 
 		for ($y=0; $y < $size_array_elegidas; $y++){
 			$no_es_simbolo=0;
 			$size_palabra=strlen($arr_palabras_elegidas[$y]);
 			$random_posicion=rand(1,CARACTERES_TOTALES-$size_palabra);
-			//Filas que contienen palabra
-			$fprohibida1=intval($random_posicion/12);
-			$fprohibida2=intval(($random_posicion+$size_palabra)/12);
-			$filasProhibidas[]=$fprohibida1;
-			$filasProhibidas[]=$fprohibida2;
+			
+			
 
 			$arr_split=str_split(substr($string, $random_posicion-1,$size_palabra+2));
 			foreach ($arr_split as $caracter) {
@@ -112,28 +111,18 @@
 			if ($no_es_simbolo==0) {
 				//$string=substr_replace($string, "<span id='".$lista_ID[$y]."' onClick='comprobar_pal(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
 				$string=substr_replace($string , $palabra, $random_posicion,$size_palabra );
+				
 			}else{
 				$y-=1;
 			}
-		}
-		for ($r=1; $r <intval(CARACTERES_TOTALES/12); $r++){
-			if (!in_array($r, $filasProhibidas)){
-				$filasDisponibles[]=$r;
-			}
-
-		}
-		$filasInsertar=array_rand($filasDisponibles,$sizeSimboAyuda);
-		for ($m=0; $m < count($filasInsertar); $m++) { 
-			$posicion= ($filasInsertar[$m]*12)-13;
-			$ayudaInsertar="+".$simboAyuda[$m]."-";
-			$sizeAyudaInsertar= strlen($ayudaInsertar);
-			$string=substr_replace($string , $ayudaInsertar, $posicion, $sizeAyudaInsertar );
 		}
 
 
 		$string=preg_replace('/\s+/','',$string);
 		$string = preg_replace("/(spanid)/", "span id", $string);
 		$string = preg_replace("/(on)/", " on", $string);
+
+		echo $string."--------------------------------------------------------------------";
 
 		return $string;
 	}

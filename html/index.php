@@ -21,6 +21,7 @@
     <?php
       include '../php/Controller.php';
       //print_r(array_values(generateHelps())) ;
+
       $dificultad=$_POST['dificultadElegida'];
       $array_palabras = obtenerPalabrasConSimbolitos($dificultad); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
@@ -91,7 +92,7 @@
                 $hayPalabra = 0;
                 $guardado="";
                 $size_palabras=0;
-                $helps = generateHelps();
+                $helps = SIMBOAYUDA;
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
 
@@ -147,6 +148,8 @@
 
                 }
                 echo $guardado;
+
+                print_r(array_values($helps));
 
 
 
