@@ -27,6 +27,7 @@ function obtenerDatos(){
 				<th>NOMBRE</th>
 				<th>FALLOS</th>
 				<th>TIEMPO</th>
+				<th>DIFICULTAD</th>
 			</tr>
 		</table>
 	</div>
@@ -57,7 +58,17 @@ function obtenerDatos(){
 					}else{
 						echo "<tr>";
 						foreach ($player as $aspectos) {
-							echo "<th >".$aspectos."</th>";
+							echo "<script>console.log('".$aspectos."')</script>";
+							if($aspectos == 'A'){
+								echo "<th >Dificil</th>";
+							}else if($aspectos == 'B'){
+								echo "<th >Normal</th>";
+							}else if($aspectos == 'C'){
+								echo "<th >Facil</th>";
+							}else{
+								echo "<th >".$aspectos."</th>";
+							}
+							
 						}
 						echo "</tr>";
 						$limite_elementos+=1;

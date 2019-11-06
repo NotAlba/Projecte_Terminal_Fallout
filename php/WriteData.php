@@ -1,16 +1,26 @@
 <?php
-    session_start();	
+    session_start();
 	if(isset($_POST["nombre"]) and isset($_POST["tiempo"]) and isset($_POST["intentos"])){
+		$dif = "";
+		echo $_POST["dificultad"];
+		if($_POST["dificultad"] == 'facil'){
+			$dif = 'C';
+		}else if($_POST["dificultad"] == 'normal'){
+			$dif = 'B';
+		}else if($_POST["dificultad"] == 'dificil'){
+			$dif = 'A';
+		}
 		$_SESSION['nombre'] = $_POST["nombre"];
 		$datosRanking = obtenerDatos();
-		$jugador = array('nombre' => $_POST["nombre"],
-						 'fallos' => $_POST["intentos"],
-						 'tiempo' => $_POST["tiempo"]);
+		$jugador = array('nombre'     => $_POST["nombre"],
+						 'fallos'     => $_POST["intentos"],
+						 'tiempo' 	  => $_POST["tiempo"],
+						 'dificultad' => $dif);
 
 
 		array_push($datosRanking,$jugador);
 
-		$datosOrdenados = array_orderby($datosRanking,'fallos',SORT_ASC,'tiempo',SORT_ASC, 'nombre',SORT_ASC);
+		$datosOrdenados = array_orderby($datosRanking,'dificultad',SORT_ASC,'fallos',SORT_ASC,'tiempo',SORT_ASC, 'nombre',SORT_ASC);
 		$json_string = json_encode($datosOrdenados,JSON_PRETTY_PRINT);
 		$file = '../resources/dataPlayers.json';
 		file_put_contents($file, $json_string);
