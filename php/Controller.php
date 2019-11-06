@@ -4,7 +4,7 @@
 	define('SIMBOLOS',devolverArrayEspeciales());
 	define('SIMBOAYUDA', generateHelps());
 	function devolverArrayEspeciales(){
-		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];
+		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/'  , '=' , '?' , '|' , '#' , '>' ];
 	}
 
 	function obtenerPalabrasConSimbolitos($dificultad){
@@ -122,7 +122,7 @@
 		$string = preg_replace("/(spanid)/", "span id", $string);
 		$string = preg_replace("/(on)/", " on", $string);
 
-		echo $string."--------------------------------------------------------------------";
+		
 
 		return $string;
 	}

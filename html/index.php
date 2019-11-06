@@ -99,6 +99,7 @@
                 $helps = SIMBOAYUDA;
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
+                $listaSimbolosProhibidos=['<','(',')','[',']','{','}','>'];
 
                 if ($num_palabras==6) {
                   $size_palabras=5;
@@ -108,7 +109,7 @@
                 
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
-                    if (!in_array($caracter_modificado, $listaSimbolos) && $caracter_modificado!='<' && $caracter_modificado!='+' && $caracter_modificado!='-') {
+                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) ) {
                       $hayPalabra = 1;
                       if ($contadorInterno==0) {
                          $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
@@ -124,13 +125,13 @@
                          $contadorInterno+=1;
                       }
 
-                    }elseif ($caracter_modificado=='+') {
-                        $guardado .= '='."<span onClick='ayuda(".$palabraCorrecta.")'>";
+                    }elseif ($caracter_modificado=='(' || $caracter_modificado=='[' || $caracter_modificado=='{' || $caracter_modificado=='<') {
+                        $guardado .= "<span onClick='ayuda(".$palabraCorrecta.")'>".$caracter_modificado;
 
                   
                     }
-                    elseif ($caracter_modificado=='-') {
-                        $guardado .= "</span>".'%';
+                    elseif ($caracter_modificado==')' || $caracter_modificado==']' || $caracter_modificado=='}' || $caracter_modificado=='>') {
+                        $guardado .= $caracter_modificado."</span>";
 
                   
                     }
@@ -153,7 +154,7 @@
                 }
                 echo $guardado;
 
-                print_r(array_values($helps));
+                
 
 
 
