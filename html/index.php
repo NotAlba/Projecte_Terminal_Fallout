@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>juego</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script type="text/javascript" src="../js/jsWork2.js"></script>
 
@@ -27,6 +28,7 @@
 
         <div id="pantalla-texto">
           <div id="efecto"></div>
+
           <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
           <div id="info_vidas">
             <p id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
@@ -144,6 +146,20 @@
 
           </div> <!-- div juego -->
         </div> <!-- div pantalla-texto -->
+
+        <div class="selecDaltonico">
+          <button id="daltonico" type="checkbox" data-toggle="toggle"> DALTONICO </button>
+        </div>
+
+
+        <div class="efectosSonido">
+
+          <audio id="audios" autoplay loop>
+            <source src="./sonido/pc.mp3" type="audio/mp3">
+          </audio>
+          <button onclick="sonidosMute()" type="button"> MUTE </button>
+
+        </div>
 
 
         <div class="resolucion-peque">

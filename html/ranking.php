@@ -4,7 +4,9 @@
 <html>
 <head>
 	<title>Ranking</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="../css/styleRanking.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">
 </head>
 
 <?php
@@ -62,14 +64,8 @@ function obtenerDatos(){
 						echo "</tr>";
 						$limite_elementos+=1;
 						}
-
-
-
 				}
 				echo "</table>"
-
-
-
 			?>
 
 		</table>
@@ -77,11 +73,25 @@ function obtenerDatos(){
 		</div>
 	</div>
 
-	
+
 	<div class="volver">
 		<form action="../index.php">
 		 <input type="submit" value="VOLVER" />
 		</form>
+	</div>
+
+
+	<div class="selecDaltonico">
+		<button id="daltonico" type="checkbox" data-toggle="toggle"> DALTONICO </button>
+	</div>
+
+	<div class="efectosSonido">
+
+		<audio id="audios" autoplay loop>
+			<source src="./sonido/pc.mp3" type="audio/mp3">
+		</audio>
+		<button onclick="sonidosMute()" type="button"> MUTE </button>
+
 	</div>
 
 	</body>

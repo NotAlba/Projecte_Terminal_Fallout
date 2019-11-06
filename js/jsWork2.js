@@ -195,4 +195,19 @@ function __mensajePromptFinJuego() {
 	document.getElementById("dataRanking").submit();
 }
 
+
+
+// Sonidos
+
+function sonidosMute() {
+	let audios = document.getElementById("audios");
+
+  if (audios.muted == true) {
+    audios.muted = false;
+  }
+  else {
+    audios.muted = true;
+  }
+}
+
 //

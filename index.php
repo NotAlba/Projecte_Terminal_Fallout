@@ -7,10 +7,9 @@
     <link rel="stylesheet" type="text/css" href="./css/resetCSS.css" media="all">
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="./css/stylePortada.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./css/styleDaltonico.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-
-
+    <script type="text/javascript" src="../js/jsWork2.js"></script>
   </head>
 
   <body>
@@ -23,10 +22,6 @@
         <div id="efecto"></div>
 
         <div class="opcionesExtra">
-          <label class="checkbox-inline">
-            <input id="daltonico" type="checkbox" data-toggle="toggle"> Daltonico
-          </label>
-          <br>
           <label class="checkbox-inline">
             <input id="extremo" type="checkbox" data-toggle="toggle"> Extremo
           </label>
@@ -52,8 +47,24 @@
           </div>
 
         </div>
-
       </div> <!-- div pantalla-texto -->
+
+      <div class="selecDaltonico">
+        <button id="daltonico" type="checkbox" data-toggle="toggle"> DALTONICO </button>
+      </div>
+
+
+      <div class="efectosSonido">
+
+        <audio id="audios" autoplay loop>
+          <source src="./sonido/pc.mp3" type="audio/mp3">
+        </audio>
+        <button onclick="sonidosMute()" type="button"> MUTE </button>
+
+      </div>
+
+
+
       <div class="resolucion-peque">
         <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
       </div>

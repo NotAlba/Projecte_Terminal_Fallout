@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/styleDatos.css" media="all">
+		<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">
 		<meta http-equiv="Refresh" content="2;url=../html/ranking.php">
 	</head>
 	<body>
