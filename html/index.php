@@ -25,6 +25,7 @@
     <?php
       include '../php/Controller.php';
       //print_r(array_values(generateHelps())) ;
+
       $dificultad=$_POST['dificultadElegida'];
       $array_palabras = obtenerPalabrasConSimbolitos($dificultad); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
@@ -95,9 +96,10 @@
                 $hayPalabra = 0;
                 $guardado="";
                 $size_palabras=0;
-                $helps = generateHelps();
+                $helps = SIMBOAYUDA;
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
+                $listaSimbolosProhibidos=['<','(',')','[',']','{','}','>'];
 
                 if ($num_palabras==6) {
                   $size_palabras=5;
@@ -107,7 +109,7 @@
                 
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
-                    if (!in_array($caracter_modificado, $listaSimbolos) && $caracter_modificado!='<' && $caracter_modificado!='+' && $caracter_modificado!='-') {
+                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) ) {
                       $hayPalabra = 1;
                       if ($contadorInterno==0) {
                          $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
@@ -123,13 +125,13 @@
                          $contadorInterno+=1;
                       }
 
-                    }elseif ($caracter_modificado=='+') {
-                        $guardado .= '='."<span onClick='ayuda(".$palabraCorrecta.")'>";
+                    }elseif ($caracter_modificado=='(' || $caracter_modificado=='[' || $caracter_modificado=='{' || $caracter_modificado=='<') {
+                        $guardado .= "<span onClick='ayuda(".$palabraCorrecta.")'>".$caracter_modificado;
 
                   
                     }
-                    elseif ($caracter_modificado=='-') {
-                        $guardado .= "</span>".'%';
+                    elseif ($caracter_modificado==')' || $caracter_modificado==']' || $caracter_modificado=='}' || $caracter_modificado=='>') {
+                        $guardado .= $caracter_modificado."</span>";
 
                   
                     }
@@ -151,6 +153,8 @@
 
                 }
                 echo $guardado;
+
+                
 
 
 
