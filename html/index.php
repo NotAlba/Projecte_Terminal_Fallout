@@ -25,6 +25,7 @@
       $array_palabras = obtenerPalabrasConSimbolitos(); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
       $decode = html_entity_decode($array_palabras);
+      // echo $array_palabras;
      ?>
   </head>
 
@@ -72,7 +73,7 @@
               <?php
 
               $array_ID=[];
-              for ($a=0; $a <6 ; $a++) {
+              for ($a=0; $a <7 ; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
               }
@@ -82,20 +83,22 @@
                 $contador=0;
                 $contadorInterno=0;
                 $contadorID=0;
-                $fila = 0;
+                $contadorAyuda=0;
+                $contadorInternoAyuda=0;
+                $fila = 1;
                 $hayPalabra = 0;
                 $guardado="";
 
-
-                
                 $helps = generateHelps();
                 $arraySinPalabras = array();
+                $posicionDeLasAyudas=array();
+                
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
-                    if (!in_array($caracter_modificado, $listaSimbolos)) {
+                    if (!in_array($caracter_modificado, $listaSimbolos) && $caracter_modificado!='<' && $caracter_modificado!='+' && $caracter_modificado!='-') {
                       $hayPalabra = 1;
                       if ($contadorInterno==0) {
-                         $guardado .= "<span id=".$array_ID[$contadorID]." onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
+                         $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
                         $contadorInterno+=1;
                       }
                       elseif ($contadorInterno==4) {
@@ -105,12 +108,23 @@
 
                       }else{
                          $guardado .= $caracter_modificado;
-                        $contadorInterno+=1;
+                         $contadorInterno+=1;
                       }
 
-                    }else{
+                    }elseif ($caracter_modificado=='+') {
+                        $guardado .= '='."<span>";
+
+                  
+                    }
+                    elseif ($caracter_modificado=='-') {
+                        $guardado .= "</span>".'%';
+
+                  
+                    }
+                    else{
                        $guardado .= $caracter_modificado;
                     }
+
 
                     $contador+=1;
                   
@@ -125,6 +139,9 @@
 
                 }
                 echo $guardado;
+
+
+
               ?>
 
             </div>
@@ -182,6 +199,4 @@
   </body>
 </html>
 
-<?php 
-  print_r(array_values($helps));
- ?>
+

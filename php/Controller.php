@@ -9,7 +9,7 @@
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
 		$palabras_elegidas = eleccionPalabras($array);
-		$simboAyuda = simbolosAyuda();
+		$simboAyuda = generateHelps();
 		$lista_ID=creacionID($palabras_elegidas,$simboAyuda);
 		$simbolosString = creacionStringBase();
 		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
@@ -58,76 +58,25 @@
 		}
 		return $array_ID;
 	}
-	function simbolosAyuda() {
-		$arrayAyuda = [];
-		$listaCaracterAyuda=[ '(' , '[' , '{' , '<' ];
-		for ($i=0; $i < 3; $i++) {
-			$longitudAyuda=rand(3,12);
-			$posicionAyuda=rand(0,(12-$longitudAyuda));
-			$posListaAyuda=rand(0,count($listaCaracterAyuda)-1);
-			$caracterPrincipio=$listaCaracterAyuda[$posListaAyuda];
-			$spanAyuda=$caracterPrincipio;
-			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-			if ( $caracterPrincipio=='(' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='(' || $simboloAyuda==')') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda.")";
-			}
-			elseif ( $caracterPrincipio=='[' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='[' || $simboloAyuda==']') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda."]";
-			}
-			elseif ( $caracterPrincipio=='{' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='{' || $simboloAyuda=='}') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda."}";
-			}
-			elseif ( $caracterPrincipio=='<' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='<' || $simboloAyuda=='>') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda.">";
-			}
-			$arrayAyuda[] = $spanAyuda;
-	 }
-	 return $arrayAyuda;
-
-	}
+	
 	function stringFinal($arr_palabras_elegidas,$string,$lista_ID, $simboAyuda){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
+		$filasProhibidas=[];
+		$filasDisponibles=[];
+		$sizeSimboAyuda=count($simboAyuda);
+		
+
 		for ($y=0; $y < $size_array_elegidas; $y++){
 			$no_es_simbolo=0;
 			$size_palabra=strlen($arr_palabras_elegidas[$y]);
 			$random_posicion=rand(1,CARACTERES_TOTALES-$size_palabra);
+			//Filas que contienen palabra
+			$fprohibida1=intval($random_posicion/12);
+			$fprohibida2=intval(($random_posicion+$size_palabra)/12);
+			$filasProhibidas[]=$fprohibida1;
+			$filasProhibidas[]=$fprohibida2;
+
 			$arr_split=str_split(substr($string, $random_posicion-1,$size_palabra+2));
 			foreach ($arr_split as $caracter) {
 				if (!in_array($caracter, SIMBOLOS)) {
@@ -142,16 +91,33 @@
 				$y-=1;
 			}
 		}
+		for ($r=1; $r <intval(CARACTERES_TOTALES/12); $r++){
+			if (!in_array($r, $filasProhibidas)){
+				$filasDisponibles[]=$r;
+			}
+
+		}
+		$filasInsertar=array_rand($filasDisponibles,$sizeSimboAyuda);
+		for ($m=0; $m < count($filasInsertar); $m++) { 
+			$posicion= ($filasInsertar[$m]*12)-11;
+			$ayudaInsertar="+".$simboAyuda[$m]."-";
+			$sizeAyudaInsertar= strlen($ayudaInsertar);
+			$string=substr_replace($string , $ayudaInsertar, $posicion, $sizeAyudaInsertar );
+		}
+
+
 		$string=preg_replace('/\s+/','',$string);
 		$string = preg_replace("/(spanid)/", "span id", $string);
 		$string = preg_replace("/(on)/", " on", $string);
+
 		return $string;
 	}
 	function getPalabraCorrecta(){
 	}
 
+
 	function generateHelps(){
-		$simbolos = ['!','$','%','/','=','?','|','#'];
+		$simbolos = ['%','=','|','#'];
 		$simbolosOpenClose = array("{","(","<","[");
 		$ayudas = 3;
 		$helps = array();
@@ -162,8 +128,9 @@
 			$inicio = $simbolosOpenClose[rand(0,count($simbolosOpenClose)-1)];
 			for ($i=0; $i  < $size ; $i++) {
 				if($i == 0){
-					$help .= htmlspecialchars($inicio,ENT_QUOTES);
+					$help .= $inicio;
 					$help .= $simbolos[rand(0,count($simbolos)-1)];
+
 				}
 
 				if ($i == $size-1) {
