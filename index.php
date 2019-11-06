@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="./css/stylePortada.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
+    <script type="text/javascript" src="js/jsWork2.js"></script> 
 
 
   </head>
@@ -36,16 +35,20 @@
 
         <div class="opciones">
 
+          <form id="formDificultad" method="post" action="html/index.php">
           <div class="opcion1">
-            <div class="juegar">
-              <a>JUGAR</a>
+                <div class="juegar">
+                  <a>JUGAR</a>
+                </div>
+                <div class="niveles">
+                  <a onclick="eleccionDificultad(this)" id="facil">FÁCIL</a>
+                  <a onclick="eleccionDificultad(this)" id="normal">NORMAL</a>
+                  <a onclick="eleccionDificultad(this)" id="dificil">DIFÍCIL</a>
+                  <input type="hidden" id="dificultadElegida" name="dificultadElegida" />
+                </div>
             </div>
-            <div class="niveles">
-              <a id="facil" href="html/index.php">FÁCIL</a>
-              <a id="normal" href="html/index.php">NORMAL</a>
-              <a id="dificil" href="html/index.php">DIFÍCIL</a>
-            </div>
-          </div>
+          </form>
+
 
           <div id="opcion2">
             <a href="html/ranking.php">RANKING</a>

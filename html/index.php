@@ -21,8 +21,9 @@
 
     <?php
       include '../php/Controller.php';
+
       //print_r(array_values(generateHelps())) ;
-      $array_palabras = obtenerPalabrasConSimbolitos(); // esto es un string
+      $array_palabras = obtenerPalabrasConSimbolitos($_POST['dificultadElegida']); // esto es un string
       $listaCaracter = str_split($array_palabras); // esto es una array
       $decode = html_entity_decode($array_palabras);
       // echo $array_palabras;

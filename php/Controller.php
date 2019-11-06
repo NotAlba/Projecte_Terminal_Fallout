@@ -5,7 +5,7 @@
 	function devolverArrayEspeciales(){
 		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
 	}
-	function obtenerPalabrasConSimbolitos(){
+	function obtenerPalabrasConSimbolitos($dificultad){
 		$a =  CARACTERES_TOTALES;
 		$array = leerArchivo();
 		$palabras_elegidas = eleccionPalabras($array);
