@@ -56,7 +56,7 @@
 
       <div class="efectosSonido">
 
-        <audio id="audios" autoplay loop controls>
+        <audio id="audios" autoplay loop>
           <source src="./sonido/pc.mp3" type="audio/mp3">
         </audio>
 
