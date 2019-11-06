@@ -56,18 +56,14 @@
 
       <div class="efectosSonido">
 
-        <audio id="audios" autoplay loop>
+        <audio id="audios" autoplay loop controls>
           <source src="./sonido/pc.mp3" type="audio/mp3">
         </audio>
+
         <button onclick="sonidosMute()" type="button"> MUTE </button>
 
       </div>
 
-
-
-      <div class="resolucion-peque">
-        <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
-      </div>
     </div> <!-- div fondo -->
   </body>
 </html>

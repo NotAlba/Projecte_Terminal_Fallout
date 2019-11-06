@@ -117,10 +117,6 @@ function __juegoPerdido(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
 
-
-
-
-
 	for (let i = 0; i<mensajesFallo.length;i++) {
 
 		mensajesFallo[i].innerHTML = "";
@@ -138,6 +134,7 @@ function __juegoGanado(){
 
 		mensajesFallo[i].innerHTML = "";
 	}
+
 }
 
 
@@ -209,5 +206,6 @@ function sonidosMute() {
     audios.muted = true;
   }
 }
+
 
 //
