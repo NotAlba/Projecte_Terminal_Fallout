@@ -23,7 +23,11 @@
 
         <div class="opcionesExtra">
           <label class="checkbox-inline">
-            <input id="daltonico" type="checkbox" data-toggle="toggle"> Daltonico
+            <form action=<?php echo $_SERVER["PHP_SELF"]  ?>  id="formDaltonic">
+              <input id="daltonico" checked onclick="changeDaltonic()" type="checkbox" data-toggle="toggle" name="daltonico"> Daltonico
+              <input type="text" id="isSelected" name="isSelected" hidden>
+
+            </form>
           </label>
           <br>
           <label class="checkbox-inline">

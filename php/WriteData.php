@@ -10,6 +10,7 @@
 		}else if($_POST["dificultad"] == 'dificil'){
 			$dif = 'A';
 		}
+		
 		$_SESSION['nombre'] = $_POST["nombre"];
 		$datosRanking = obtenerDatos();
 		$jugador = array('nombre'     => $_POST["nombre"],
