@@ -99,7 +99,7 @@
 		}
 		$filasInsertar=array_rand($filasDisponibles,$sizeSimboAyuda);
 		for ($m=0; $m < count($filasInsertar); $m++) { 
-			$posicion= ($filasInsertar[$m]*12)-11;
+			$posicion= ($filasInsertar[$m]*12)-13;
 			$ayudaInsertar="+".$simboAyuda[$m]."-";
 			$sizeAyudaInsertar= strlen($ayudaInsertar);
 			$string=substr_replace($string , $ayudaInsertar, $posicion, $sizeAyudaInsertar );

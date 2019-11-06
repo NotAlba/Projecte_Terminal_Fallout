@@ -112,7 +112,7 @@
                       }
 
                     }elseif ($caracter_modificado=='+') {
-                        $guardado .= '='."<span>";
+                        $guardado .= '='."<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>";
 
                   
                     }
