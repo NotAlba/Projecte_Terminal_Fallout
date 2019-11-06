@@ -45,7 +45,7 @@
                   <a onclick="eleccionDificultad(this)" id="facil">FÁCIL</a>
                   <a onclick="eleccionDificultad(this)" id="normal">NORMAL</a>
                   <a onclick="eleccionDificultad(this)" id="dificil">DIFÍCIL</a>
-                  <p id="dificultadElegida" name="dificultadElegida" hidden></p>
+                  <input type="hidden" id="dificultadElegida" name="dificultadElegida" />
                 </div>
             </div>
           </form>
