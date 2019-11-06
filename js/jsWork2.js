@@ -198,4 +198,14 @@ function __mensajePromptFinJuego() {
 	document.getElementById("dataRanking").submit();
 }
 
+function help(palabraCorrecta){
+	palabraCorrecta = palabraCorrecta.innerHTML;
+}
+
+
+function eleccionDificultad(dificultad){
+	console.log(dificultad.id);
+	document.getElementById('dificultadElegida').value = dificultad.id; 
+	document.getElementById('formDificultad').submit();
+}
 //
