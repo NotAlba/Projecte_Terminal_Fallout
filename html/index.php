@@ -5,6 +5,10 @@
     }else{
       $nombre = '';
     }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -153,14 +157,6 @@
               ?>
 
             </div>
-
-
-
-
-
-
-
-
             <!-- El div (mensajes) es para los mensajes de ayuda al hacer pulsar una palabra -->
             <!-- La class (mensaje) es para estructurar el tamaño de cada mensaje -->
             <div id="mensajes">
@@ -202,6 +198,7 @@
       <input type="text" id="player" name="nombre">
       <input type="text" id="time" name="tiempo">
       <input type="text" id="try" name="intentos">
+      <input type="text" id="dificultadChoosed" name="dificultad" value=<?php echo $dificultad ?>>
       <input type="submit" name="sendData" name="guardarDatos">
     </form>
   </body>

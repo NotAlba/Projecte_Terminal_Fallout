@@ -1,12 +1,14 @@
 [
     {
         "nombre": "Pepito",
-        "fallos": "1",
-        "tiempo": "00:02"
+        "fallos": "3",
+        "tiempo": "00:05",
+        "dificultad": "B"
     },
     {
-        "nombre": "Roger",
+        "nombre": "David",
         "fallos": "3",
-        "tiempo": "00:28"
+        "tiempo": "00:04",
+        "dificultad": "C"
     }
 ]
