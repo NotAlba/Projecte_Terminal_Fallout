@@ -4,12 +4,20 @@
     <meta charset="utf-8">
     <title>juego</title>
     <link rel="stylesheet" type="text/css" href="./css/resetCSS.css" media="all">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="./css/stylePortada.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="all">;
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/jsWork2.js"></script> 
-
-
+    <?php 
+          if(isset($_POST['isSelected'])){
+              if($_POST['isSelected'] == "false"){
+              }else if($_POST['isSelected'] == "true"){
+                echo  '<link rel="stylesheet" type="text/css" href="./css/styleDaltonico.css" media="all">';
+              }
+           }else{
+                echo  '<link rel="stylesheet" type="text/css" href="./css/style.css" media="all">';
+           } 
+     ?>
   </head>
 
   <body>
@@ -23,7 +31,19 @@
 
         <div class="opcionesExtra">
           <label class="checkbox-inline">
-            <input id="daltonico" type="checkbox" data-toggle="toggle"> Daltonico
+            <form action=<?php echo $_SERVER["PHP_SELF"] ?>  method ="post" id="formDaltonic">
+              <input id="daltonico"  onclick="changeDaltonic()" 
+                                  <?php 
+                                        if(isset($_POST['isSelected'])){
+                                            if($_POST['isSelected'] == "true"){
+                                              echo "checked";
+                                            }
+                                         }
+                                  ?> 
+              type="checkbox" data-toggle="toggle" name="daltonico"> Daltonico
+              <input type="text" id="isSelected" name="isSelected" hidden>
+
+            </form>
           </label>
           <br>
           <label class="checkbox-inline">

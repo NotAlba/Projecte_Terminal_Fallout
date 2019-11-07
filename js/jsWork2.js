@@ -234,3 +234,8 @@ function eleccionDificultad(dificultad){
 	document.getElementById('formDificultad').submit();
 }
 
+function changeDaltonic(){
+	document.getElementById('isSelected').value = document.getElementById('daltonico').checked;
+	document.getElementById('formDaltonic').submit();
+}
+
