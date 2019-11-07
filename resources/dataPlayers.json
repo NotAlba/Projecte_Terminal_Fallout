@@ -30,27 +30,10 @@
         "dificultad": "C"
     },
     {
-        "nombre": "Puyolito",
-        "fallos": "2",
-        "tiempo": "00:04",
-        "dificultad": "C"
-    },
-    {
-        "nombre": "Puyol",
-        "fallos": "2",
-        "tiempo": "00:05",
-        "dificultad": "C"
-    },
-    {
         "nombre": "David",
         "fallos": "3",
         "tiempo": "00:04",
         "dificultad": "C"
-    },
-    {
-        "nombre": "PuySDAD",
-        "fallos": "3",
-        "tiempo": "00:05",
-        "dificultad": "C"
     }
+    
 ]

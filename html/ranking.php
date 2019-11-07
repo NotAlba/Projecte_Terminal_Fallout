@@ -9,7 +9,7 @@
 
 	     <?php
           if(isset($_POST['colorDaltonicoRanking'])){
-          	echo "pepito";
+          	
              if($_POST['colorDaltonicoRanking'] == "true"){
                 echo  '<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">';
               }
