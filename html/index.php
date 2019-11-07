@@ -108,7 +108,7 @@
                 $helps = SIMBOAYUDA;
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
-                $listaSimbolosProhibidos=['<','(',')','[',']','{','}','>'];
+                $listaSimbolosProhibidos=['(',')','[',']','{','}','>'];
 
                 if ($num_palabras==6) {
                   $size_palabras=5;
@@ -118,7 +118,7 @@
                 
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
-                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) ) {
+                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) && $caracter_modificado!='<' ) {
                       $hayPalabra = 1;
                       if ($contadorInterno==0) {
                          $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;

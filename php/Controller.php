@@ -16,7 +16,8 @@
 		$simbolosString = creacionStringBase();
 		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID);
 		$stringFinalConAyudas= stringFinal(SIMBOAYUDA,$stringFinal, $lista_ID);
-		return $stringFinalConAyudas;
+		$string= correcionEspacios($stringFinalConAyudas,$dificultad);
+		return $string;
 	}
 	function leerArchivo($dificultad){
 		if ($dificultad=='facil'){
@@ -171,5 +172,11 @@
 		}
 		return $helps;
 		
+	}
+	function correcionEspacios($string,$dificultad){
+		if ($dificultad=='dificil') {
+			$string .= '$%!$=%';
+		}
+		return $string;
 	}
 ?>
