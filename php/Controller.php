@@ -1,29 +1,58 @@
+
 <?php
 	define('CARACTERES_TOTALES','390');
 	define('SIMBOLOS',devolverArrayEspeciales());
+	define('SIMBOAYUDA', generateHelps());
 	function devolverArrayEspeciales(){
-		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}'];;
+		return 	$arr_especiales=['!' , '"' , '$' , '%' , '/'  , '=' , '?' , '|' , '#' , '>','*' ];
 	}
-	function obtenerPalabrasConSimbolitos(){
+
+	function obtenerPalabrasConSimbolitos($dificultad){
 		$a =  CARACTERES_TOTALES;
-		$array = leerArchivo();
-		$palabras_elegidas = eleccionPalabras($array);
-		$simboAyuda = simbolosAyuda();
-		$lista_ID=creacionID($palabras_elegidas,$simboAyuda);
+		$array = leerArchivo($dificultad);
+		$palabras_elegidas = eleccionPalabras($array,$dificultad);
+		
+		$lista_ID=creacionID($palabras_elegidas,SIMBOAYUDA, $dificultad);
 		$simbolosString = creacionStringBase();
-		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID, $simboAyuda);
-		return $stringFinal;
+		$stringFinal = stringFinal($palabras_elegidas,$simbolosString, $lista_ID);
+		$stringFinalConAyudas= stringFinal(SIMBOAYUDA,$stringFinal, $lista_ID);
+		$string= correcionEspacios($stringFinalConAyudas,$dificultad);
+		return $string;
 	}
-	function leerArchivo(){
-		$ruta='../resources/diccionari_paraules.txt';
+	function leerArchivo($dificultad){
+		if ($dificultad=='facil'){
+			$ruta='../resources/diccionari_paraules.txt';
+		}else{
+			$ruta='../resources/diccionari_paraules_normal.txt';
+		}
+		
 		return $arr_palabras = file($ruta);
 	}
-	function eleccionPalabras($arr_palabras){
+	function devolverDificultad($dificultad){
+		if ($dificultad=='facil') {
+			$num_palabras=6;
+		}elseif ($dificultad=='normal') {
+			$num_palabras=7;
+		}else{
+			$num_palabras=12;
+		}
+		return $num_palabras;
+	}
+
+	function eleccionPalabras($arr_palabras,$dificultad){
+		if ($dificultad=='facil') {
+			$num_palabras=6;
+		}elseif ($dificultad=='normal') {
+			$num_palabras=7;
+		}else{
+			$num_palabras=12;
+		}
+
 		$arr_eleccion_palabra_indice=[];
 		$arr_palabras_elegidas=[];
 		$i=0;
 		$size_array_palabras=count($arr_palabras)-1;
-		while ($i<6){
+		while ($i<$num_palabras){
 			$random_index=rand(0,$size_array_palabras);
 			if (in_array($random_index, $arr_eleccion_palabra_indice)) {
 				while (in_array($random_index, $arr_eleccion_palabra_indice)) {
@@ -57,76 +86,22 @@
 		}
 		return $array_ID;
 	}
-	function simbolosAyuda() {
-		$arrayAyuda = [];
-		$listaCaracterAyuda=[ '(' , '[' , '{' , '<' ];
-		for ($i=0; $i < 3; $i++) {
-			$longitudAyuda=rand(3,12);
-			$posicionAyuda=rand(0,(12-$longitudAyuda));
-			$posListaAyuda=rand(0,count($listaCaracterAyuda)-1);
-			$caracterPrincipio=$listaCaracterAyuda[$posListaAyuda];
-			$spanAyuda=$caracterPrincipio;
-			$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-			if ( $caracterPrincipio=='(' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='(' || $simboloAyuda==')') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda.")";
-			}
-			elseif ( $caracterPrincipio=='[' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='[' || $simboloAyuda==']') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda."]";
-			}
-			elseif ( $caracterPrincipio=='{' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='{' || $simboloAyuda=='}') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda."}";
-			}
-			elseif ( $caracterPrincipio=='<' ) {
-				for ($j=0 ; $j < ($longitudAyuda-2) ; $j++) {
-					if ($simboloAyuda=='<' || $simboloAyuda=='>') {
-						$j--;
-					}
-					else {
-						$spanAyuda=$spanAyuda.$simboloAyuda;
-					}
-					$simboloAyuda=SIMBOLOS[rand(0,count(SIMBOLOS)-1)];
-				}
-				$spanAyuda=$spanAyuda.">";
-			}
-			$arrayAyuda[] = $spanAyuda;
-	 }
-	 return $arrayAyuda;
-
-	}
-	function stringFinal($arr_palabras_elegidas,$string,$lista_ID, $simboAyuda){
+	
+	function stringFinal($arr_palabras_elegidas,$string,$lista_ID){
 		$random_posicion=0;
 		$size_array_elegidas=count($arr_palabras_elegidas);
+
+		
+		
+		
+
 		for ($y=0; $y < $size_array_elegidas; $y++){
 			$no_es_simbolo=0;
 			$size_palabra=strlen($arr_palabras_elegidas[$y]);
 			$random_posicion=rand(1,CARACTERES_TOTALES-$size_palabra);
+			
+			
+
 			$arr_split=str_split(substr($string, $random_posicion-1,$size_palabra+2));
 			foreach ($arr_split as $caracter) {
 				if (!in_array($caracter, SIMBOLOS)) {
@@ -137,15 +112,71 @@
 			if ($no_es_simbolo==0) {
 				//$string=substr_replace($string, "<span id='".$lista_ID[$y]."' onClick='comprobar_pal(this.id)'>".$palabra."</span>",$random_posicion,$size_palabra );
 				$string=substr_replace($string , $palabra, $random_posicion,$size_palabra );
+				
 			}else{
 				$y-=1;
 			}
 		}
+
+
 		$string=preg_replace('/\s+/','',$string);
 		$string = preg_replace("/(spanid)/", "span id", $string);
 		$string = preg_replace("/(on)/", " on", $string);
+
+		
+
 		return $string;
 	}
 	function getPalabraCorrecta(){
+	}
+
+
+	function generateHelps(){
+		$simbolos = ['%','=','|','#'];
+		$simbolosOpenClose = array("{","(","<","[");
+		$ayudas = 3;
+		$helps = array();
+
+		for($k=0; $k  < $ayudas ; $k++){
+			$size = rand(1,10);
+			$help = '';
+			$inicio = $simbolosOpenClose[rand(0,count($simbolosOpenClose)-1)];
+			for ($i=0; $i  < $size ; $i++) {
+				if($i == 0){
+					$help .= $inicio;
+					$help .= $simbolos[rand(0,count($simbolos)-1)];
+
+				}
+
+				if ($i == $size-1) {
+					switch ($inicio) {
+					    case "{":
+							$help .= "}";
+					        break;
+					    case "(":
+							$help .= ")";
+					        break;
+					    case "<":
+							$help .= ">";
+					        break;
+					    case "[":
+							$help .= "]";
+					    	break;
+					}
+				}
+				if($i != 0 & $i != $size-1){
+					$help .= $simbolos[rand(0,count($simbolos)-1)];
+				}
+			}
+			array_push($helps, $help);
+		}
+		return $helps;
+		
+	}
+	function correcionEspacios($string,$dificultad){
+		if ($dificultad=='dificil') {
+			$string .= '$%!$=%';
+		}
+		return $string;
 	}
 ?>

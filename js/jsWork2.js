@@ -1,10 +1,16 @@
 //metodo implementado
 let intentosGlobal= 4;
 let intentosConsumidos = 0;
+let nombreSession = '';
 console.log("intentos:" , intentosGlobal)
-function comprobar_pal(id,palabraCorrecta){
+function comprobar_pal(id,palabraCorrecta,nombre){
+	nombreSession = nombre;
 	id.classList.add("disabled");
-	adicionPuntos = ".....";
+	if(document.getElementById('dificultadChoose').innerHTML == 'facil'){
+		adicionPuntos = ".....";
+	}else{
+		adicionPuntos = ".......";
+	}
 	let vida = "<span>[]</span>&nbsp";
 	let contador = 0;
 	let palabraSeleccionada = palabra = id.innerHTML;
@@ -21,21 +27,42 @@ function comprobar_pal(id,palabraCorrecta){
 					contador++;
 				}
 			}
-			if(posicionBr == 1){
-				adicionPuntos = ".<br>...."
+			if(document.getElementById('dificultadChoose').innerHTML == 'facil'){
+				if(posicionBr == 1){
+					adicionPuntos = ".<br>...."
 
-			}else if (posicionBr == 2) {
+				}
+				else if (posicionBr == 2) {
 
-			}
-			else if (posicionBr == 2) {
+					adicionPuntos = "..<br>..."
+				}
+				else if (posicionBr == 3) {
+					adicionPuntos = "...<br>.."
+				}
+				else if (posicionBr == 4) {
+					adicionPuntos = "....<br>."
+				}
+			}else{
+				if(posicionBr == 1){
+					adicionPuntos = ".<br>......"
 
-				adicionPuntos = "..<br>..."
-			}
-			else if (posicionBr == 3) {
-				adicionPuntos = "...<br>.."
-			}
-			else if (posicionBr == 4) {
-				adicionPuntos = "....<br>."
+				}
+				else if (posicionBr == 2) {
+
+					adicionPuntos = "..<br>....."
+				}
+				else if (posicionBr == 3) {
+					adicionPuntos = "...<br>...."
+				}
+				else if (posicionBr == 4) {
+					adicionPuntos = "....<br>..."
+				}
+				else if (posicionBr == 5) {
+					adicionPuntos = ".....<br>.."
+				}
+				else if (posicionBr == 6) {
+					adicionPuntos = "......<br>."
+				}				
 			}
 
 			__rellenarMensajes(contador);
@@ -45,7 +72,11 @@ function comprobar_pal(id,palabraCorrecta){
 			intentosConsumidos++;
 			document.getElementById("intentos").innerHTML = intentosGlobal + " ATTEMPT(S) LEFT: " + vida.repeat(intentosGlobal);
 		}else{
+			document.getElementById("vaultboyloss").className += " finjuegoimagen";
+			document.getElementById("tiempoCrono").innerHTML = "";
+			
 			__juegoPerdido();
+
 		}
 	}
 
@@ -112,11 +143,8 @@ function __rellenarMensajes(contador){
 function __juegoPerdido(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL BLOQUEADA";
-	document.getElementsByClassName("codigo")[0].innerText = "";
-	document.getElementsByClassName("codigo")[1].innerText = "";
-	document.getElementById("divblink")[0].innerText = "";
-	document.getElementById("vaultboyloss").className += " finjuegoimagen";
-	document.getElementById("tiempoCrono").innerHTML = "";
+	
+	
 
 
 
@@ -124,6 +152,7 @@ function __juegoPerdido(){
 
 		mensajesFallo[i].innerHTML = "";
 	}
+
 }
 
 function __juegoGanado(){
@@ -131,7 +160,7 @@ function __juegoGanado(){
 	document.getElementsByClassName("caracteres")[0].innerText = "";
 	document.getElementById("intentos").innerHTML = "TERMINAL DESBLOQUEADA";
 	document.getElementsByClassName("codigo")[0].innerText = "";
-	document.getElementsByClassName("codigo")[1].innerText = "";
+	//document.getElementsByClassName("codigo")[1].innerText = "";
 
 	for (let i = 0; i<mensajesFallo.length;i++) {
 
@@ -176,9 +205,9 @@ function __cronoFin() {
 
 
 function __mensajePromptFinJuego() {
-	let nombreJugador = prompt("Escribe tu nombre");
+	let nombreJugador = prompt("Escribe tu nombre",nombreSession);
 	if (seg < 10) {
-		seg = "0" + (seg-1);
+		seg = "0" + (seg);
 	}
 
 	document.getElementById("intentos").innerHTML = nombreJugador +" - Tiempo: "+ min+":"+seg +" - Vidas: "+ intentosGlobal;
@@ -194,4 +223,23 @@ function __mensajePromptFinJuego() {
 	document.getElementById("dataRanking").submit();
 }
 
-//
+function help(palabraCorrecta){
+	palabraCorrecta = palabraCorrecta.innerHTML;
+}
+
+
+function eleccionDificultad(dificultad){
+	console.log(dificultad.id);
+	document.getElementById('dificultadElegida').value = dificultad.id; 
+	document.getElementById('formDificultad').submit();
+}
+
+function changeDaltonic(){
+	document.getElementById('isSelected').value = document.getElementById('daltonico').checked;
+	document.getElementById('formDaltonic').submit();
+}
+
+function goRanking(){
+	document.getElementById('formRanking').submit();
+}
+

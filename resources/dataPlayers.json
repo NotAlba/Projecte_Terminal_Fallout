@@ -1,197 +1,56 @@
 [
     {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "00:00"
-    },
-    {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "00:00"
-    },
-    {
         "nombre": "Alba",
         "fallos": "0",
-        "tiempo": "00:00"
+        "tiempo": "00:01",
+        "dificultad": "A"
     },
     {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "Albawins",
-        "fallos": "0",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "Albita on fire",
-        "fallos": "0",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "Albita",
-        "fallos": "0",
-        "tiempo": "00:02"
-    },
-    {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "00:03"
-    },
-    {
-        "nombre": "",
-        "fallos": "0",
-        "tiempo": "01:03"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "Bastaya",
-        "fallos": "1",
-        "tiempo": "00:01"
-    },
-    {
-        "nombre": "PACO PUTO AMO",
-        "fallos": "1",
-        "tiempo": "00:02"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:08"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:08"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:08"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:08"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "00:18"
-    },
-    {
-        "nombre": "",
-        "fallos": "1",
-        "tiempo": "01:08"
-    },
-    {
-        "nombre": "Pamela Anderson",
-        "fallos": "1",
-        "tiempo": "03:23"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:0-1"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:02"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:03"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:04"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:04"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:04"
-    },
-    {
-        "nombre": "Juan",
-        "fallos": "2",
-        "tiempo": "00:04"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:05"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:10"
-    },
-    {
-        "nombre": "",
-        "fallos": "2",
-        "tiempo": "00:25"
-    },
-    {
-        "nombre": "Paco",
-        "fallos": "2",
-        "tiempo": "00:25"
-    },
-    {
-        "nombre": "Paco",
-        "fallos": "2",
-        "tiempo": "00:25"
-    },
-    {
-        "nombre": "Madreee",
+        "nombre": "AlbaONFireeee",
         "fallos": "3",
-        "tiempo": "00:03"
+        "tiempo": "00:03",
+        "dificultad": "B"
     },
     {
-        "nombre": "",
+        "nombre": "Pepito",
         "fallos": "3",
-        "tiempo": "00:04"
+        "tiempo": "00:05",
+        "dificultad": "B"
     },
     {
-        "nombre": "",
-        "fallos": "3",
-        "tiempo": "00:05"
+        "nombre": "Puyolito",
+        "fallos": "0",
+        "tiempo": "00:01",
+        "dificultad": "C"
     },
     {
-        "nombre": "",
-        "fallos": "3",
-        "tiempo": "00:05"
+        "nombre": "Puyol",
+        "fallos": "2",
+        "tiempo": "00:04",
+        "dificultad": "C"
     },
     {
-        "nombre": "",
-        "fallos": "3",
-        "tiempo": "00:06"
+        "nombre": "Puyolito",
+        "fallos": "2",
+        "tiempo": "00:04",
+        "dificultad": "C"
     },
     {
-        "nombre": "",
-        "fallos": "3",
-        "tiempo": "00:08"
+        "nombre": "Puyol",
+        "fallos": "2",
+        "tiempo": "00:05",
+        "dificultad": "C"
     },
     {
-        "nombre": "Alexis",
+        "nombre": "David",
         "fallos": "3",
-        "tiempo": "00:12"
+        "tiempo": "00:04",
+        "dificultad": "C"
+    },
+    {
+        "nombre": "PuySDAD",
+        "fallos": "3",
+        "tiempo": "00:05",
+        "dificultad": "C"
     }
 ]
