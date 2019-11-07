@@ -85,7 +85,7 @@
               </div>
               <div id='easter_egg'>
                 <img src="https://i.imgur.com/LbvX2iy.png" alt="AnimacionEasterEgg">
-                
+
               </div>
               
 
@@ -208,9 +208,10 @@
 
 
           </div> <!-- div juego -->
+          <a href="#" onclick="easterEgg()" class="myButton">DO NOT PRESS</a>
         </div> <!-- div pantalla-texto -->
 
-        <a href="#" onclick="easterEgg()" class="myButton">DO NOT PRESS</a>
+        
 
         <div class="efectosSonido">
 
