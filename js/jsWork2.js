@@ -255,3 +255,24 @@ function sonidosMute() {
     audios.muted = true;
   }
 }
+
+function easterEgg(){
+	document.getElementById("easter_egg").className += " finjuegoimagen";
+	setTimeout("goEaster()",50);
+
+
+   setTimeout(function () {
+       window.location.href = "../EasterEgg";
+    }, 2000); 
+
+
+
+
+	}
+
+function goEaster(){
+	document.getElementById('formEaster').submit();
+	
+}
+
+

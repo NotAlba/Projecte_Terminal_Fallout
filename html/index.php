@@ -55,9 +55,9 @@
           <div id="efecto"></div>
           <!-- El div (info_vidas) es para mostrar tanto la información de la cabecera como las vidas restantes que le quedan al jugador -->
           <div id="info_vidas">
-            <p id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
+            <p class='typing' id="info_juego">ROBCO INDUSTRIES (TN) TERMILINK PROTOCOL ENTER PASSWORD NOW</p>
             <div id="vidas_crono">
-              <p id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
+              <p class='typing' id="intentos">4 ATTEMPT(S) LEFT:  <span>[]</span>  <span>[]</span> <span>[]</span> <span>[]</span></p>
               <p id="tiempoCrono"> <span id="minutos">0</span>:<span id="segundos">00</span> </p>
             </div>
             <hr id="filete">
@@ -67,12 +67,14 @@
           <div id="juego">
             <!-- El div (caracteres) es para poner todos los caracteres y palabras que contendra el juego -->
             <div class="codigo">
+              <div class="typing">
               <?php
                 for ($i=0; $i < 32; $i++) {
                   $num = rand(10,99);
                   echo "Ex0$num&nbsp <br>";
                 }
               ?>
+              </div>
             </div>
             <div class='buentrabajo' >
               <div id='vaultboywin'>
@@ -81,6 +83,11 @@
               <div id='vaultboyloss'>
                 <img src="https://media.giphy.com/media/IbUkU9LrDgx9uEctjD/giphy.gif" alt="AnimacionPERDIDO">
               </div>
+              <div id='easter_egg'>
+                <img src="https://i.imgur.com/LbvX2iy.png" alt="AnimacionEasterEgg">
+                
+              </div>
+              
 
             </div>
             <div class="caracteres">
@@ -167,7 +174,7 @@
                   $guardado=str_replace('*',$listaSimbolosProhibidos[$sustitucion],$guardado);
                 }
                 
-                echo $guardado;
+                echo "<div class='typing'>".$guardado."</div>";
 
               ?>
 
@@ -202,6 +209,9 @@
 
           </div> <!-- div juego -->
         </div> <!-- div pantalla-texto -->
+
+        <a href="#" onclick="easterEgg()" class="myButton">DO NOT PRESS</a>
+
         <div class="efectosSonido">
 
           <audio id="audios" autoplay loop>
