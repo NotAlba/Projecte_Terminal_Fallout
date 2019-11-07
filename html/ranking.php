@@ -105,6 +105,13 @@ function obtenerDatos(){
 		 <input type="submit" value="VOLVER" />
 		</form>
 	</div>
+	<div class="efectosSonido">
 
+		<audio id="audios" autoplay loop>
+			<source src="../sonido/pc.mp3" type="audio/mp3">
+		</audio>
+		<button onclick="sonidosMute()" type="button"> MUTE </button>
+
+	</div>
 	</body>
 </html>
