@@ -78,7 +78,7 @@
               <?php
               $num_palabras=devolverDificultad($dificultad);
               $array_ID=[];
-              for ($a=0; $a <$num_palabras; $a++) {
+              for ($a=0; $a <$num_palabras+1; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
 
@@ -99,7 +99,7 @@
                 $helps = SIMBOAYUDA;
                 $arraySinPalabras = array();
                 $posicionDeLasAyudas=array();
-                $listaSimbolosProhibidos=['<','(',')','[',']','{','}','>'];
+                $listaSimbolosProhibidos=['(',')','[',']','{','}','>'];
 
                 if ($num_palabras==6) {
                   $size_palabras=5;
