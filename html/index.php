@@ -78,7 +78,7 @@
               <?php
               $num_palabras=devolverDificultad($dificultad);
               $array_ID=[];
-              for ($a=0; $a <$num_palabras+1; $a++) {
+              for ($a=0; $a <$num_palabras; $a++) {
                 $base='pal'.$a;
                 $array_ID[]=$base;
 
@@ -109,7 +109,7 @@
                 
                 foreach ($listaCaracter as $caracter ) {
                     $caracter_modificado=html_entity_decode($caracter);
-                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) ) {
+                    if (!in_array($caracter_modificado, $listaSimbolos) && !in_array($caracter_modificado, $listaSimbolosProhibidos) && $caracter_modificado!='<' ) {
                       $hayPalabra = 1;
                       if ($contadorInterno==0) {
                          $guardado .= "<span id='".$array_ID[$contadorID]."' onClick='comprobar_pal(this,".$palabraCorrecta.",\"$nombre\")'>".$caracter_modificado;
