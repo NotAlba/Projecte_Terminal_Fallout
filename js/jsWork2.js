@@ -243,3 +243,15 @@ function goRanking(){
 	document.getElementById('formRanking').submit();
 }
 
+
+// sonido
+function sonidosMute() {
+	let audios = document.getElementById("audios");
+
+  if (audios.muted == true) {
+    audios.muted = false;
+  }
+  else {
+    audios.muted = true;
+  }
+}

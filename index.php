@@ -94,9 +94,14 @@
         </div>
 
       </div> <!-- div pantalla-texto -->
-      <div class="resolucion-peque">
-        <p>RESOLUCIÓN DE LA PANTALLA DEMASIADO PEQUEÑA</p>
-      </div>
+      <div class="efectosSonido">
+
+        <audio id="audios" autoplay loop>
+          <source src="./sonido/pc.mp3" type="audio/mp3">
+        </audio>
+
+        <button onclick="sonidosMute()" type="button"> MUTE </button>
+
     </div> <!-- div fondo -->
   </body>
 </html>
