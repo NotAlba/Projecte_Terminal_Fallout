@@ -152,6 +152,12 @@
                   }
 
                 }
+                $apariciones=substr_count($guardado, '*');
+                for ($h=0; $h < $apariciones ; $h++) { 
+                  $sustitucion=array_rand($listaSimbolosProhibidos);
+                  $guardado=str_replace('*',$listaSimbolosProhibidos[$sustitucion],$guardado);
+                }
+                
                 echo $guardado;
 
                 
