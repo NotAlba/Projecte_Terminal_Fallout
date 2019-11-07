@@ -18,7 +18,7 @@ body{
 }
 
 .niveles a:hover , #opcion2 a:hover , .opcion1:hover .juegar a{
-	background-color: #2e94dc;
+  background-color: #2e94dc;
   color: #000;
 }
 
