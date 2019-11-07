@@ -5,10 +5,21 @@
 <head>
 	<title>Ranking</title>
 	<link rel="stylesheet" type="text/css" href="../css/styleRanking.css" media="all">
+
+	     <?php 
+          if(isset($_POST['colorDaltonicoRanking'])){
+          	echo "pepito";
+             if($_POST['colorDaltonicoRanking'] == "true"){
+                echo  '<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">';
+              }
+           }else{
+                echo  '<link rel="stylesheet" type="text/css" href="../css/styleRanking.css" media="all">';
+           } 
+     ?>
 </head>
 
 <?php
-
+	echo $_POST['colorDaltonicoRanking'];
 function obtenerDatos(){
 			$data = file_get_contents("../resources/dataPlayers.json");
 

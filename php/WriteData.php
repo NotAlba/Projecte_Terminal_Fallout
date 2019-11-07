@@ -1,8 +1,8 @@
 <?php
     session_start();
+    echo $_POST['daltonico'];
 	if(isset($_POST["nombre"]) and isset($_POST["tiempo"]) and isset($_POST["intentos"])){
 		$dif = "";
-		echo $_POST["dificultad"];
 		if($_POST["dificultad"] == 'facil'){
 			$dif = 'C';
 		}else if($_POST["dificultad"] == 'normal'){
@@ -64,6 +64,15 @@ function array_orderby() {
 		<link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
 		<link rel="stylesheet" type="text/css" href="../css/styleDatos.css" media="all">
+		    <?php 
+          if(isset($_POST['daltonico'])){
+              if($_POST['daltonico'] == "true"){
+                echo  '<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">';
+              }
+           }else{
+                echo  '<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">';
+           } 
+     ?>
 		<meta http-equiv="Refresh" content="2;url=../html/ranking.php">
 	</head>
 	<body>
@@ -74,13 +83,9 @@ function array_orderby() {
 				<div id="efecto"></div>
 				<div id="cargaDatos">
 					<p>GUARDANDO DATOS EN EL FICHERO</p>
-					
 					<p class="textDatos">Gracias por jugar</p>
 				</div>
 			</div>
-
-
-
 		</div>
  </body>
 </html>

@@ -1,13 +1,10 @@
-<?php 
+<?php
     session_start();
     if(isset($_SESSION['nombre'])){
       $nombre =  $_SESSION['nombre'];
     }else{
       $nombre = '';
     }
-
-
-
 
 ?>
 
@@ -20,7 +17,19 @@
     <link rel="stylesheet" type="text/css" href="../css/resetCSS.css" media="all">
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <?php 
+          if(isset($_POST['colorDaltonico'])){
+             if($_POST['colorDaltonico'] == "true"){
+                echo  '<link rel="stylesheet" type="text/css" href="../css/styleDaltonico.css" media="all">';
+              }
+           }else{
+                echo "hola";
+                echo  '<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">';
+           } 
+     ?>
     <script type="text/javascript" src="../js/jsWork2.js"></script>
+
+
 
     <?php
       include '../php/Controller.php';
@@ -160,10 +169,6 @@
                 
                 echo $guardado;
 
-                
-
-
-
               ?>
 
             </div>
@@ -209,6 +214,13 @@
       <input type="text" id="time" name="tiempo">
       <input type="text" id="try" name="intentos">
       <input type="text" id="dificultadChoosed" name="dificultad" value=<?php echo $dificultad ?>>
+      <input type="text" id="daltonico" name="daltonico" value=
+                                                          <?php 
+                                                                if(isset($_POST['colorDaltonico'])){
+                                                                      echo $_POST['colorDaltonico'];
+                                                                    }
+                                                                 
+                                                          ?> 
       <input type="submit" name="sendData" name="guardarDatos">
     </form>
   </body>

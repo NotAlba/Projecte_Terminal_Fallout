@@ -239,3 +239,7 @@ function changeDaltonic(){
 	document.getElementById('formDaltonic').submit();
 }
 
+function goRanking(){
+	document.getElementById('formRanking').submit();
+}
+

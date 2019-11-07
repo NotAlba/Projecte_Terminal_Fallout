@@ -64,15 +64,32 @@
                   <a onclick="eleccionDificultad(this)" id="facil">FÁCIL</a>
                   <a onclick="eleccionDificultad(this)" id="normal">NORMAL</a>
                   <a onclick="eleccionDificultad(this)" id="dificil">DIFÍCIL</a>
-                  <input type="hidden" id="dificultadElegida" name="dificultadElegida" />
+                  <input type="text" hidden id="dificultadElegida" name="dificultadElegida" />
+                  <input type="text" hidden id="colorDaltonico" name="colorDaltonico" value=
+
+                    <?php 
+                    if(isset($_POST['isSelected'])){
+                      echo $_POST['isSelected']; 
+                    }
+
+                    ?> 
+                  />
                 </div>
             </div>
           </form>
 
-
-          <div id="opcion2">
-            <a href="html/ranking.php">RANKING</a>
-          </div>
+          <form method="post" id="formRanking" action="html/ranking.php">
+            <div id="opcion2">
+              <a onclick="goRanking()">RANKING</a>
+              <input type="text" hidden id="colorDaltonicoRanking" name="colorDaltonicoRanking" value=
+                                                                                    <?php 
+                                                                                      if(isset($_POST['isSelected'])){
+                                                                                        echo $_POST['isSelected']; 
+                                                                                      }
+                                                                                    ?> 
+                                                                                  />
+            </div>
+          </form>
 
         </div>
 
