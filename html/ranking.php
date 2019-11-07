@@ -4,9 +4,10 @@
 <html>
 <head>
 	<title>Ranking</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="../css/styleRanking.css" media="all">
 
-	     <?php 
+	     <?php
           if(isset($_POST['colorDaltonicoRanking'])){
           	echo "pepito";
              if($_POST['colorDaltonicoRanking'] == "true"){
@@ -14,7 +15,7 @@
               }
            }else{
                 echo  '<link rel="stylesheet" type="text/css" href="../css/styleRanking.css" media="all">';
-           } 
+           }
      ?>
 </head>
 
@@ -79,7 +80,7 @@ function obtenerDatos(){
 							}else{
 								echo "<th >".$aspectos."</th>";
 							}
-							
+
 						}
 						echo "</tr>";
 						$limite_elementos+=1;
@@ -99,7 +100,7 @@ function obtenerDatos(){
 		</div>
 	</div>
 
-	
+
 	<div class="volver">
 		<form action="../index.php">
 		 <input type="submit" value="VOLVER" />
